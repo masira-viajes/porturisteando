@@ -12,118 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── Reset & Variables ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:           #0c1624;
-      --bg2:          #0f1d30;
-      --bg3:          #142035;
-      --gold:         #c8902a;
-      --gold-light:   #e8b84a;
-      --gold-dim:     rgba(200,144,42,0.55);
-      --gold-pale:    rgba(200,144,42,0.1);
-      --gold-border:  rgba(200,144,42,0.25);
-      --cream:        #f0e0c0;
-      --cream-dim:    rgba(240,210,170,0.65);
-      --cream-faint:  rgba(240,210,170,0.35);
-      --white10:      rgba(255,255,255,0.05);
-      --white15:      rgba(255,255,255,0.08);
-      --radius:       14px;
-      --radius-sm:    9px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--cream);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    img { display: block; max-width: 100%; }
-
-    /* ── Utility ── */
-    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 72px 0; }
-    .section-label {
-      font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--gold-dim); font-weight: 500; margin-bottom: 10px;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 5vw, 38px);
-      font-style: italic; font-weight: 400; color: var(--cream);
-      line-height: 1.2; margin-bottom: 14px;
-    }
-    .section-title em { color: var(--gold-light); font-style: italic; }
-    .section-sub {
-      font-size: 14px; color: var(--cream-dim); font-weight: 300;
-      max-width: 520px; line-height: 1.7;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 0 20px;
-      background: rgba(12,22,36,0.85);
-      backdrop-filter: blur(18px);
-      border-bottom: 0.5px solid var(--gold-border);
-      transition: background 0.3s;
-    }
-    .nav-inner {
-      max-width: 900px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px; font-style: italic; font-weight: 600;
-      color: var(--cream); letter-spacing: 0.3px;
-    }
-    .nav-logo span { color: var(--gold); }
-    .nav-links {
-      display: flex; gap: 28px; list-style: none;
-    }
-    .nav-links a {
-      font-size: 12.5px; color: var(--cream-dim); letter-spacing: 0.3px;
-      transition: color 0.2s; font-weight: 400;
-    }
-    .nav-links a:hover { color: var(--gold-light); }
-    .nav-cta {
-      background: var(--gold-pale);
-      border: 0.5px solid var(--gold-border);
-      border-radius: 30px; padding: 7px 18px;
-      font-size: 12px; font-weight: 500; color: var(--gold-light);
-      transition: all 0.2s; white-space: nowrap;
-    }
-    .nav-cta:hover { background: rgba(200,144,42,0.18); border-color: var(--gold-dim); }
-    .nav-menu-btn {
-      display: none; background: none; border: none;
-      cursor: pointer; padding: 4px; color: var(--cream);
-      flex-direction: column; gap: 5px;
-    }
-    .nav-menu-btn span {
-      display: block; width: 22px; height: 1.5px;
-      background: var(--cream-dim); border-radius: 2px; transition: all 0.3s;
-    }
-    .mobile-menu {
-      display: none; position: fixed; inset: 60px 0 0 0; z-index: 99;
-      background: rgba(10,18,30,0.97); backdrop-filter: blur(20px);
-      flex-direction: column; align-items: center; justify-content: center;
-      gap: 32px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px; font-style: italic; color: var(--cream-dim);
-      transition: color 0.2s;
-    }
-    .mobile-menu a:hover { color: var(--gold-light); }
+    /* ── PAGE SPECIFIC: HERO & CAT GRID ── */
 
     /* ── HERO ── */
     .hero {
@@ -176,24 +67,6 @@
       max-width: 480px; line-height: 1.75;
       margin-bottom: 36px; margin-top: 16px;
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--gold);
-      color: #0c1020; font-weight: 500; font-size: 13.5px;
-      padding: 13px 26px; border-radius: 30px;
-      transition: all 0.2s; border: none; cursor: pointer;
-    }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--white10);
-      border: 0.5px solid var(--gold-border);
-      color: var(--cream-dim); font-weight: 400; font-size: 13.5px;
-      padding: 13px 26px; border-radius: 30px;
-      transition: all 0.2s; cursor: pointer;
-    }
-    .btn-outline:hover { background: var(--gold-pale); border-color: var(--gold-dim); color: var(--cream); }
     .hero-stats {
       display: flex; flex-wrap: wrap; gap: 32px;
       margin-top: 52px; padding-top: 32px;
@@ -498,89 +371,10 @@
       line-height: 1.4; margin-bottom: 28px;
     }
     .reviews-quote em { color: var(--gold-light); font-style: normal; }
-    .reviews-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 0.5px solid var(--gold-border);
-      padding: 40px 20px;
-    }
-    .footer-inner {
-      max-width: 900px; margin: 0 auto;
-      display: flex; flex-wrap: wrap;
-      align-items: center; justify-content: space-between; gap: 20px;
-    }
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px; font-style: italic; color: var(--cream-faint);
-    }
-    .footer-links {
-      display: flex; gap: 20px; flex-wrap: wrap;
-    }
-    .footer-links a {
-      font-size: 11.5px; color: rgba(200,144,42,0.35);
-      transition: color 0.2s; letter-spacing: 0.3px;
-    }
-    .footer-links a:hover { color: var(--gold-dim); }
-    .footer-copy {
-      font-size: 10.5px; color: rgba(200,144,42,0.2);
-      letter-spacing: 1px; text-transform: uppercase; width: 100%;
-      text-align: center; padding-top: 20px;
-      border-top: 0.5px solid rgba(200,144,42,0.08);
-      margin-top: 10px;
-    }
-
-    /* ── WHATSAPP FLOAT ── */
-    .wa-float {
-      position: fixed; bottom: 24px; right: 24px; z-index: 200;
-      width: 56px; height: 56px; border-radius: 50%;
-      background: #25d366;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-    }
-    .wa-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 28px rgba(37,211,102,0.55);
-    }
-    .wa-float svg { width: 28px; height: 28px; fill: #fff; }
-    .wa-pulse {
-      position: absolute; width: 56px; height: 56px; border-radius: 50%;
-      background: rgba(37,211,102,0.3);
-      animation: wa-ring 2.5s infinite;
-    }
-    @keyframes wa-ring {
-      0% { transform: scale(1); opacity: 0.6; }
-      100% { transform: scale(1.7); opacity: 0; }
-    }
-
-    /* ── FADE-IN ANIMATION ── */
-    .fade-in {
-      opacity: 0; transform: translateY(22px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-menu-btn { display: flex; }
-      .section { padding: 52px 0; }
       .services-layout { grid-template-columns: 1fr; }
-      .service-cta-box { position: static; }
-      .masira-inner {
-        grid-template-columns: 1fr;
-        padding: 32px 24px; gap: 28px;
-      }
-      .hero-stats { gap: 20px; }
-      .cat-grid { grid-template-columns: 1fr 1fr; }
-      .tours-grid { grid-template-columns: 1fr; }
-      .footer-inner { justify-content: center; text-align: center; }
-      .footer-links { justify-content: center; }
-    }
-    @media (max-width: 380px) {
-      .cat-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -951,32 +745,6 @@
     </svg>
   </a>
 
-  <script>
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-    document.querySelectorAll('.menu-link').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    });
-
-    // Intersection Observer for fade-in
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Trigger hero fade-ins immediately
-    setTimeout(() => {
-      document.querySelectorAll('.hero .fade-in').forEach(el => el.classList.add('visible'));
-    }, 100);
-  </script>
+  <script src="main.js" defer></script>
 </body>
 </html>

@@ -11,164 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:          #0c1624;
-      --bg2:         #0f1d30;
-      --bg3:         #142035;
-      --gold:        #c8902a;
-      --gold-light:  #e8b84a;
-      --gold-dim:    rgba(200,144,42,0.55);
-      --gold-pale:   rgba(200,144,42,0.1);
-      --gold-border: rgba(200,144,42,0.22);
-      --cream:       #f0e0c0;
-      --cream-dim:   rgba(240,210,170,0.65);
-      --cream-faint: rgba(240,210,170,0.32);
-      --white06:     rgba(255,255,255,0.04);
-      --white10:     rgba(255,255,255,0.07);
-      --radius:      14px;
-      --radius-sm:   9px;
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--cream);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 0 20px;
-      background: rgba(12,22,36,0.88);
-      backdrop-filter: blur(18px);
-      border-bottom: 0.5px solid var(--gold-border);
-    }
-    .nav-inner {
-      max-width: 960px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px; gap: 16px;
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px; font-style: italic; font-weight: 600;
-      color: var(--cream); white-space: nowrap;
-    }
-    .nav-logo span { color: var(--gold); }
-    .nav-links {
-      display: flex; gap: 22px; list-style: none; flex-wrap: nowrap;
-    }
-    .nav-links a {
-      font-size: 12px; color: var(--cream-faint); transition: color 0.2s;
-      white-space: nowrap;
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
-    .nav-cta {
-      background: var(--gold-pale); border: 0.5px solid var(--gold-border);
-      border-radius: 30px; padding: 7px 16px;
-      font-size: 12px; font-weight: 500; color: var(--gold-light);
-      transition: all 0.2s; white-space: nowrap; flex-shrink: 0;
-    }
-    .nav-cta:hover { background: rgba(200,144,42,0.18); }
-    .nav-menu-btn {
-      display: none; background: none; border: none;
-      cursor: pointer; flex-direction: column; gap: 5px; padding: 4px;
-    }
-    .nav-menu-btn span {
-      display: block; width: 22px; height: 1.5px;
-      background: var(--cream-dim); border-radius: 2px;
-    }
-    .mobile-menu {
-      display: none; position: fixed; inset: 60px 0 0 0; z-index: 99;
-      background: rgba(10,18,30,0.97); backdrop-filter: blur(20px);
-      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; font-style: italic; color: var(--cream-dim); transition: color 0.2s;
-    }
-    .mobile-menu a:hover { color: var(--gold-light); }
-
-    /* ── HERO SUBPAGE ── */
-    .subhero {
-      padding: 110px 20px 56px;
-      position: relative; overflow: hidden;
-    }
-    .subhero-glow {
-      position: absolute; border-radius: 50%; pointer-events: none;
-      width: 500px; height: 500px; top: -180px; right: -100px;
-      background: radial-gradient(circle, rgba(160,85,15,0.18) 0%, transparent 68%);
-    }
-    .subhero-inner {
-      max-width: 960px; margin: 0 auto;
-      display: flex; align-items: flex-end; gap: 40px; flex-wrap: wrap;
-    }
-    .subhero-breadcrumb {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 11px; color: var(--cream-faint); margin-bottom: 16px;
-      letter-spacing: 0.3px;
-    }
-    .subhero-breadcrumb a { color: var(--gold-dim); transition: color 0.2s; }
-    .subhero-breadcrumb a:hover { color: var(--gold-light); }
-    .subhero-breadcrumb span { color: var(--cream-faint); }
-    .subhero-text { flex: 1; min-width: 260px; }
-    .subhero-label {
-      font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--gold-dim); font-weight: 500; margin-bottom: 10px;
-    }
-    .subhero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(34px, 6vw, 58px);
-      font-weight: 400; font-style: italic;
-      line-height: 1.08; color: var(--cream); margin-bottom: 14px;
-    }
-    .subhero-title em { color: var(--gold-light); }
-    .subhero-desc {
-      font-size: 14px; color: var(--cream-dim); font-weight: 300;
-      max-width: 480px; line-height: 1.75;
-    }
-    .subhero-meta {
-      display: flex; gap: 20px; flex-wrap: wrap;
-      margin-top: 24px;
-    }
-    .subhero-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--gold-pale); border: 0.5px solid var(--gold-border);
-      border-radius: 20px; padding: 5px 14px;
-      font-size: 11.5px; color: var(--cream-dim); font-weight: 300;
-    }
-
-    /* ── CATEGORY NAV ── */
-    .cat-nav {
-      background: var(--bg2);
-      border-top: 0.5px solid var(--gold-border);
-      border-bottom: 0.5px solid var(--gold-border);
-      overflow-x: auto; scrollbar-width: none;
-    }
-    .cat-nav::-webkit-scrollbar { display: none; }
-    .cat-nav-inner {
-      max-width: 960px; margin: 0 auto; padding: 0 20px;
-      display: flex; gap: 0; white-space: nowrap;
-    }
-    .cat-nav-btn {
-      display: inline-flex; align-items: center; gap: 7px;
-      padding: 14px 18px;
-      font-size: 12.5px; color: var(--cream-faint);
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s; cursor: pointer;
-      font-weight: 400; background: none; border-top: none; border-left: none; border-right: none;
-      flex-shrink: 0;
-    }
-    .cat-nav-btn:hover { color: var(--cream-dim); border-bottom-color: var(--gold-border); }
-    .cat-nav-btn.active { color: var(--gold-light); border-bottom-color: var(--gold); }
-    .cat-nav-emoji { font-size: 14px; }
+    /* ── PAGE SPECIFIC: CATEGORIES & RESTAURANT CARDS ── */
 
     /* ── MAIN CONTENT ── */
     .main { max-width: 960px; margin: 0 auto; padding: 0 20px 80px; }
@@ -207,7 +52,7 @@
     .resto-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
+      gap: 14px;
     }
     .resto-card {
       background: var(--white06);
@@ -258,21 +103,6 @@
       background: linear-gradient(90deg, transparent, rgba(200,144,42,0.2), transparent);
       margin-top: 56px;
     }
-
-    /* ── TIP BOX ── */
-    .tip-box {
-      background: rgba(200,144,42,0.06);
-      border: 0.5px solid var(--gold-border);
-      border-left: 3px solid var(--gold);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 14px 18px;
-      margin-top: 16px;
-      display: flex; gap: 12px; align-items: flex-start;
-    }
-    .tip-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-    .tip-text { font-size: 12px; color: var(--cream-dim); line-height: 1.6; font-weight: 300; }
-    .tip-text strong { color: var(--cream); font-weight: 500; }
-
     /* ── CTA BOTTOM ── */
     .cta-bottom {
       margin-top: 64px;
@@ -292,21 +122,6 @@
       line-height: 1.7; max-width: 440px; margin: 0 auto 24px;
     }
     .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--gold); color: #0c1020;
-      font-weight: 500; font-size: 13px; padding: 12px 24px;
-      border-radius: 30px; transition: all 0.2s; border: none; cursor: pointer;
-    }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--white06); border: 0.5px solid var(--gold-border);
-      color: var(--cream-dim); font-size: 13px; padding: 12px 24px;
-      border-radius: 30px; transition: all 0.2s; cursor: pointer;
-    }
-    .btn-outline:hover { background: var(--gold-pale); color: var(--cream); }
-
     /* ── OTHER CATEGORIES ── */
     .other-cats {
       margin-top: 64px; padding-top: 48px;
@@ -333,60 +148,9 @@
     .other-emoji { font-size: 18px; }
     .other-name { font-size: 12.5px; font-weight: 500; color: var(--cream-dim); }
 
-    /* ── WA FLOAT ── */
-    .wa-float {
-      position: fixed; bottom: 24px; right: 24px; z-index: 200;
-      width: 54px; height: 54px; border-radius: 50%;
-      background: #25d366;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
-    .wa-float svg { width: 26px; height: 26px; fill: #fff; }
-    .wa-pulse {
-      position: absolute; width: 54px; height: 54px; border-radius: 50%;
-      background: rgba(37,211,102,0.28); animation: ring 2.5s infinite;
-    }
-    @keyframes ring { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.7); opacity: 0; } }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 0.5px solid var(--gold-border); padding: 36px 20px;
-    }
-    .footer-inner {
-      max-width: 960px; margin: 0 auto;
-      display: flex; flex-wrap: wrap; align-items: center;
-      justify-content: space-between; gap: 16px;
-    }
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px; font-style: italic; color: var(--cream-faint);
-    }
-    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
-    .footer-links a {
-      font-size: 11px; color: rgba(200,144,42,0.3); transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--gold-dim); }
-    .footer-copy {
-      font-size: 10px; color: rgba(200,144,42,0.15);
-      letter-spacing: 1px; text-transform: uppercase;
-      width: 100%; text-align: center; padding-top: 16px;
-      border-top: 0.5px solid rgba(200,144,42,0.07); margin-top: 8px;
-    }
-
-    /* ── FADE ── */
-    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
-      .nav-links { display: none; }
-      .nav-menu-btn { display: flex; }
-      .nav-cta { display: none; }
-      .subhero { padding: 90px 20px 40px; }
       .resto-grid { grid-template-columns: 1fr 1fr; }
-      .cta-bottom { padding: 28px 20px; }
       .other-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 400px) {
@@ -427,10 +191,10 @@
   <section class="subhero">
     <div class="subhero-glow"></div>
     <div class="subhero-inner">
-      <div class="subhero-text fade-in">
-        <div class="subhero-breadcrumb">
+      <div class="fade-in">
+        <div class="breadcrumb">
           <a href="index.html">Inicio</a>
-          <span>›</span>
+          <span style="color:var(--cream-faint)">›</span>
           <span>Recomendaciones Gastronómicas</span>
         </div>
         <div class="subhero-label">Guía gastronómica · Oporto</div>
@@ -1003,14 +767,9 @@
     </svg>
   </a>
 
+  <script src="main.js" defer></script>
   <script>
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    document.querySelectorAll('.menu-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
-    // Scroll to category — renamed to avoid conflict with window.scrollTo
+    // Page-specific navigation logic
     function goToSection(id) {
       const el = document.getElementById(id);
       if (!el) return;
@@ -1030,44 +789,10 @@
       btn.addEventListener('click', () => goToSection(sections[i]));
     });
 
-    // Active state tracking via scroll position
-    function updateActiveTab() {
-      const navHeight = document.querySelector('nav').offsetHeight;
-      const catNavHeight = document.getElementById('catNav').offsetHeight;
-      const offset = navHeight + catNavHeight + 20;
-      const scrollY = window.pageYOffset + offset;
-
-      let activeIdx = 0;
-      sections.forEach((id, i) => {
-        const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollY) activeIdx = i;
-      });
-
-      navBtns.forEach((btn, i) => btn.classList.toggle('active', i === activeIdx));
-
-      // Scroll active btn into view within the nav strip
-      const activeBtn = navBtns[activeIdx];
-      if (activeBtn) {
-        const catNav = document.getElementById('catNav');
-        const btnLeft = activeBtn.offsetLeft;
-        const btnWidth = activeBtn.offsetWidth;
-        const navWidth = catNav.offsetWidth;
-        const scrollLeft = btnLeft - navWidth / 2 + btnWidth / 2;
-        catNav.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-      }
-    }
-
-    window.addEventListener('scroll', updateActiveTab, { passive: true });
-    updateActiveTab();
-
-    // Fade-in observer
-    const fadeIO = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-    document.querySelectorAll('.fade-in').forEach(el => fadeIO.observe(el));
-
-    // Trigger hero immediately
-    setTimeout(() => document.querySelectorAll('.subhero .fade-in').forEach(el => el.classList.add('visible')), 80);
+    // Wait for DOM and call shared nav init
+    window.addEventListener('load', () => {
+      initCategoryNav(sections, navBtns);
+    });
   </script>
 </body>
 </html>
