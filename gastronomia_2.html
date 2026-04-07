@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Las mejores recomendaciones gastronómicas de Oporto — cocina tradicional portuguesa, bacalao, francesinha, mariscos, sardinas, vegetarianos y más. Por Fer, guía turística española en Porto.">
+  <meta name="keywords" content="restaurantes Oporto español, gastronomía Porto, francesinha Porto, bacalao Porto, mariscos Oporto, pasteles nata Porto">
+  <meta property="og:title" content="Gastronomía en Oporto · Porturisteando con Fer">
+  <meta property="og:description" content="Los mejores restaurantes de Oporto por categorías — la guía definitiva de una española que vive en Porto.">
+  <title>Gastronomía en Oporto · Porturisteando con Fer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #0c1624;
+      --bg2:         #0f1d30;
+      --bg3:         #142035;
+      --gold:        #c8902a;
+      --gold-light:  #e8b84a;
+      --gold-dim:    rgba(200,144,42,0.55);
+      --gold-pale:   rgba(200,144,42,0.1);
+      --gold-border: rgba(200,144,42,0.22);
+      --cream:       #f0e0c0;
+      --cream-dim:   rgba(240,210,170,0.65);
+      --cream-faint: rgba(240,210,170,0.32);
+      --white06:     rgba(255,255,255,0.04);
+      --white10:     rgba(255,255,255,0.07);
+      --radius:      14px;
+      --radius-sm:   9px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 20px;
+      background: rgba(12,22,36,0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 0.5px solid var(--gold-border);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; gap: 16px;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px; font-style: italic; font-weight: 600;
+      color: var(--cream); white-space: nowrap;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex; gap: 22px; list-style: none; flex-wrap: nowrap;
+    }
+    .nav-links a {
+      font-size: 12px; color: var(--cream-faint); transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+    .nav-cta {
+      background: var(--gold-pale); border: 0.5px solid var(--gold-border);
+      border-radius: 30px; padding: 7px 16px;
+      font-size: 12px; font-weight: 500; color: var(--gold-light);
+      transition: all 0.2s; white-space: nowrap; flex-shrink: 0;
+    }
+    .nav-cta:hover { background: rgba(200,144,42,0.18); }
+    .nav-menu-btn {
+      display: none; background: none; border: none;
+      cursor: pointer; flex-direction: column; gap: 5px; padding: 4px;
+    }
+    .nav-menu-btn span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--cream-dim); border-radius: 2px;
+    }
+    .mobile-menu {
+      display: none; position: fixed; inset: 60px 0 0 0; z-index: 99;
+      background: rgba(10,18,30,0.97); backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-style: italic; color: var(--cream-dim); transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--gold-light); }
+
+    /* ── HERO SUBPAGE ── */
+    .subhero {
+      padding: 110px 20px 56px;
+      position: relative; overflow: hidden;
+    }
+    .subhero-glow {
+      position: absolute; border-radius: 50%; pointer-events: none;
+      width: 500px; height: 500px; top: -180px; right: -100px;
+      background: radial-gradient(circle, rgba(160,85,15,0.18) 0%, transparent 68%);
+    }
+    .subhero-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; align-items: flex-end; gap: 40px; flex-wrap: wrap;
+    }
+    .subhero-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; color: var(--cream-faint); margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+    .subhero-breadcrumb a { color: var(--gold-dim); transition: color 0.2s; }
+    .subhero-breadcrumb a:hover { color: var(--gold-light); }
+    .subhero-breadcrumb span { color: var(--cream-faint); }
+    .subhero-text { flex: 1; min-width: 260px; }
+    .subhero-label {
+      font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--gold-dim); font-weight: 500; margin-bottom: 10px;
+    }
+    .subhero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 6vw, 58px);
+      font-weight: 400; font-style: italic;
+      line-height: 1.08; color: var(--cream); margin-bottom: 14px;
+    }
+    .subhero-title em { color: var(--gold-light); }
+    .subhero-desc {
+      font-size: 14px; color: var(--cream-dim); font-weight: 300;
+      max-width: 480px; line-height: 1.75;
+    }
+    .subhero-meta {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .subhero-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--gold-pale); border: 0.5px solid var(--gold-border);
+      border-radius: 20px; padding: 5px 14px;
+      font-size: 11.5px; color: var(--cream-dim); font-weight: 300;
+    }
+
+    /* ── CATEGORY NAV ── */
+    .cat-nav {
+      background: var(--bg2);
+      border-top: 0.5px solid var(--gold-border);
+      border-bottom: 0.5px solid var(--gold-border);
+      overflow-x: auto; scrollbar-width: none;
+    }
+    .cat-nav::-webkit-scrollbar { display: none; }
+    .cat-nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 20px;
+      display: flex; gap: 0; white-space: nowrap;
+    }
+    .cat-nav-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 14px 18px;
+      font-size: 12.5px; color: var(--cream-faint);
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s; cursor: pointer;
+      font-weight: 400; background: none; border-top: none; border-left: none; border-right: none;
+      flex-shrink: 0;
+    }
+    .cat-nav-btn:hover { color: var(--cream-dim); border-bottom-color: var(--gold-border); }
+    .cat-nav-btn.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+    .cat-nav-emoji { font-size: 14px; }
+
+    /* ── MAIN CONTENT ── */
+    .main { max-width: 960px; margin: 0 auto; padding: 0 20px 80px; }
+
+    /* ── CATEGORY SECTION ── */
+    .cat-section {
+      padding: 56px 0 0; scroll-margin-top: 130px;
+    }
+    .cat-header {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 28px;
+    }
+    .cat-header-icon {
+      width: 52px; height: 52px; border-radius: 13px; flex-shrink: 0;
+      background: var(--gold-pale); border: 0.5px solid var(--gold-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+    }
+    .cat-header-text {}
+    .cat-header-label {
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold-dim); margin-bottom: 5px;
+    }
+    .cat-header-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 4vw, 30px); font-style: italic; font-weight: 400;
+      color: var(--cream); line-height: 1.15;
+    }
+    .cat-header-title em { color: var(--gold-light); }
+    .cat-header-desc {
+      font-size: 12.5px; color: var(--cream-faint); font-weight: 300;
+      margin-top: 5px; line-height: 1.6;
+    }
+
+    /* ── RESTAURANT GRID ── */
+    .resto-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .resto-card {
+      background: var(--white06);
+      border: 0.5px solid var(--gold-border);
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+      transition: all 0.22s;
+      position: relative; overflow: hidden;
+      cursor: default;
+    }
+    .resto-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+    }
+    .resto-card:hover {
+      background: rgba(200,144,42,0.06);
+      border-color: rgba(200,144,42,0.38);
+      transform: translateY(-2px);
+    }
+    .resto-card:hover::after { transform: scaleX(1); }
+    .resto-name {
+      font-size: 13.5px; font-weight: 500; color: var(--cream);
+      margin-bottom: 4px; line-height: 1.3;
+    }
+    .resto-location {
+      font-size: 11px; color: var(--gold-dim);
+      display: flex; align-items: center; gap: 4px;
+      font-weight: 300;
+    }
+    .resto-location::before {
+      content: '·';
+      font-size: 16px; color: var(--gold);
+      line-height: 1; flex-shrink: 0;
+    }
+    .resto-badge {
+      display: inline-block; margin-top: 8px;
+      background: var(--gold-pale); border: 0.5px solid var(--gold-border);
+      border-radius: 20px; padding: 2px 9px;
+      font-size: 9.5px; color: var(--gold); font-weight: 500;
+      letter-spacing: 0.4px; text-transform: uppercase;
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      height: 0.5px;
+      background: linear-gradient(90deg, transparent, rgba(200,144,42,0.2), transparent);
+      margin-top: 56px;
+    }
+
+    /* ── TIP BOX ── */
+    .tip-box {
+      background: rgba(200,144,42,0.06);
+      border: 0.5px solid var(--gold-border);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin-top: 16px;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .tip-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .tip-text { font-size: 12px; color: var(--cream-dim); line-height: 1.6; font-weight: 300; }
+    .tip-text strong { color: var(--cream); font-weight: 500; }
+
+    /* ── CTA BOTTOM ── */
+    .cta-bottom {
+      margin-top: 64px;
+      background: linear-gradient(135deg, rgba(200,144,42,0.07), rgba(15,30,55,0.5));
+      border: 0.5px solid var(--gold-border);
+      border-radius: 18px; padding: 40px 36px;
+      text-align: center;
+    }
+    .cta-bottom-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 4vw, 30px); font-style: italic;
+      color: var(--cream); margin-bottom: 10px;
+    }
+    .cta-bottom-title em { color: var(--gold-light); }
+    .cta-bottom-text {
+      font-size: 13px; color: var(--cream-dim); font-weight: 300;
+      line-height: 1.7; max-width: 440px; margin: 0 auto 24px;
+    }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: #0c1020;
+      font-weight: 500; font-size: 13px; padding: 12px 24px;
+      border-radius: 30px; transition: all 0.2s; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white06); border: 0.5px solid var(--gold-border);
+      color: var(--cream-dim); font-size: 13px; padding: 12px 24px;
+      border-radius: 30px; transition: all 0.2s; cursor: pointer;
+    }
+    .btn-outline:hover { background: var(--gold-pale); color: var(--cream); }
+
+    /* ── OTHER CATEGORIES ── */
+    .other-cats {
+      margin-top: 64px; padding-top: 48px;
+      border-top: 0.5px solid var(--gold-border);
+    }
+    .other-label {
+      font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold-dim); margin-bottom: 18px; font-weight: 500;
+    }
+    .other-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px;
+    }
+    .other-card {
+      background: var(--white06); border: 0.5px solid var(--gold-border);
+      border-radius: var(--radius-sm); padding: 14px 16px;
+      display: flex; align-items: center; gap: 10px;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .other-card:hover {
+      background: var(--gold-pale); border-color: rgba(200,144,42,0.4);
+      transform: translateX(3px);
+    }
+    .other-emoji { font-size: 18px; }
+    .other-name { font-size: 12.5px; font-weight: 500; color: var(--cream-dim); }
+
+    /* ── WA FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
+      width: 54px; height: 54px; border-radius: 50%;
+      background: #25d366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+    .wa-float svg { width: 26px; height: 26px; fill: #fff; }
+    .wa-pulse {
+      position: absolute; width: 54px; height: 54px; border-radius: 50%;
+      background: rgba(37,211,102,0.28); animation: ring 2.5s infinite;
+    }
+    @keyframes ring { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.7); opacity: 0; } }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid var(--gold-border); padding: 36px 20px;
+    }
+    .footer-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 16px;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px; font-style: italic; color: var(--cream-faint);
+    }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 11px; color: rgba(200,144,42,0.3); transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold-dim); }
+    .footer-copy {
+      font-size: 10px; color: rgba(200,144,42,0.15);
+      letter-spacing: 1px; text-transform: uppercase;
+      width: 100%; text-align: center; padding-top: 16px;
+      border-top: 0.5px solid rgba(200,144,42,0.07); margin-top: 8px;
+    }
+
+    /* ── FADE ── */
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .nav-menu-btn { display: flex; }
+      .nav-cta { display: none; }
+      .subhero { padding: 90px 20px 40px; }
+      .resto-grid { grid-template-columns: 1fr 1fr; }
+      .cta-bottom { padding: 28px 20px; }
+      .other-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 400px) {
+      .resto-grid { grid-template-columns: 1fr; }
+      .other-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Portu<span>risteando</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#recomendaciones">Recomendaciones</a></li>
+        <li><a href="index.html#tours">Tours</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#masira">Más destinos</a></li>
+      </ul>
+      <a href="https://wa.me/351912534766" target="_blank" class="nav-cta">Contactar</a>
+      <button class="nav-menu-btn" id="menuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="menu-link">Inicio</a>
+    <a href="index.html#recomendaciones" class="menu-link">Recomendaciones</a>
+    <a href="index.html#tours" class="menu-link">Tours</a>
+    <a href="index.html#servicios" class="menu-link">Servicios</a>
+    <a href="https://wa.me/351912534766" target="_blank" style="color:var(--gold-light)">Contactar ↗</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="subhero">
+    <div class="subhero-glow"></div>
+    <div class="subhero-inner">
+      <div class="subhero-text fade-in">
+        <div class="subhero-breadcrumb">
+          <a href="index.html">Inicio</a>
+          <span>›</span>
+          <span>Recomendaciones Gastronómicas</span>
+        </div>
+        <div class="subhero-label">Guía gastronómica · Oporto</div>
+        <h1 class="subhero-title">
+          Comer bien en Porto<br><em>sin equivocarse</em>
+        </h1>
+        <p class="subhero-desc">
+          Mi selección personal de los mejores restaurantes, tascas y marisquerías de Oporto — organizados por lo que más te apetece comer.
+        </p>
+        <div class="subhero-meta">
+          <div class="subhero-pill">🍽️ 9 categorías</div>
+          <div class="subhero-pill">📍 60+ restaurantes</div>
+          <div class="subhero-pill">✅ Testados por Fer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY NAV (sticky) -->
+  <div class="cat-nav" id="catNav">
+    <div class="cat-nav-inner">
+      <button class="cat-nav-btn active"><span class="cat-nav-emoji">🥘</span>Tradicional</button>
+      <button class="cat-nav-btn"><span class="cat-nav-emoji">🐟</span>Bacalao</button>
+      <button class="cat-nav-btn"><span class="cat-nav-emoji">🥪</span>Francesinha</button>
+      <button class="cat-nav-btn"><span class="cat-nav-emoji">🦞</span>Mariscos</button>
+      <button class="cat-nav-btn"><span class="cat-nav-emoji">🐟</span>Sardinas</button>
+      <button class="cat-nav-btn"><span class="cat-nav-emoji">🥖</span>Sándwiches</button>
+      <button class="cat-nav-btn"><span class="cat-nav-emoji">🌿</span>Vegetarianos</button>
+      <button class="cat-nav-btn"><span class="cat-nav-emoji">🥐</span>Pasteles de Nata</button>
+      <button class="cat-nav-btn"><span class="cat-nav-emoji">🌾</span>Gluten Free</button>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- 1 · TRADICIONAL -->
+    <section class="cat-section fade-in" id="tradicional">
+      <div class="cat-header">
+        <div class="cat-header-icon">🥘</div>
+        <div class="cat-header-text">
+          <div class="cat-header-label">Categoría 01</div>
+          <div class="cat-header-title">Cocina tradicional <em>portuguesa</em></div>
+          <div class="cat-header-desc">Las tascas y adegas donde los portuenses comen de verdad. Sin trampa, sin cartón.</div>
+        </div>
+      </div>
+      <div class="resto-grid">
+        <div class="resto-card">
+          <div class="resto-name">Café Lobito</div>
+          <div class="resto-location">Praça da Batalha</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Adega Viseu no Porto</div>
+          <div class="resto-location">Porto centro</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">O Rápido</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Senhor Zé</div>
+          <div class="resto-location">Poveiros</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Postigo do Carvão</div>
+          <div class="resto-location">Ribeira</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Taberna dos Mercadores</div>
+          <div class="resto-location">Ribeira</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Abadia do Porto</div>
+          <div class="resto-location">Aliados</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Douro Sentido</div>
+          <div class="resto-location">Poveiros</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Casa Dias</div>
+          <div class="resto-location">Vila Nova de Gaia</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">María Rita</div>
+          <div class="resto-location">Poveiros</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Nova'Adega</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Casa Viúva</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Café Almada</div>
+          <div class="resto-location">Porto centro</div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Tip de Fer:</strong> En estos sitios pide siempre el "prato do dia" — es más barato, más fresco y lo que los locales comen. Reserva con antelación en Taberna dos Mercadores.</div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 2 · BACALAO -->
+    <section class="cat-section fade-in" id="bacalao">
+      <div class="cat-header">
+        <div class="cat-header-icon">🐟</div>
+        <div class="cat-header-text">
+          <div class="cat-header-label">Categoría 02</div>
+          <div class="cat-header-title">Bacalao · <em>Bacalhau</em></div>
+          <div class="cat-header-desc">Portugal tiene más de 365 recetas de bacalao — una para cada día del año. Aquí los mejores donde probarlo.</div>
+        </div>
+      </div>
+      <div class="resto-grid">
+        <div class="resto-card">
+          <div class="resto-name">O Bacalhoeiro</div>
+          <div class="resto-location">Cais Gaia</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Abadia do Porto</div>
+          <div class="resto-location">Aliados</div>
+          <div class="resto-badge">También en tradicional</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Adega São Nicolau</div>
+          <div class="resto-location">Ribeira</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Douro Sentido</div>
+          <div class="resto-location">Poveiros</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Adega Viseu no Porto</div>
+          <div class="resto-location">Porto centro</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Taverna d'Avó</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Maria Rita</div>
+          <div class="resto-location">Poveiros</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Culto ao Bacalhau</div>
+          <div class="resto-location">Porto</div>
+          <div class="resto-badge">Especialista</div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Tip de Fer:</strong> Pide el <em>bacalhau à Brás</em> si es tu primera vez — es el más suave y fácil de entender. Para aventureros: <em>bacalhau com natas</em> en Adega São Nicolau.</div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 3 · FRANCESINHA -->
+    <section class="cat-section fade-in" id="francesinha">
+      <div class="cat-header">
+        <div class="cat-header-icon">🥪</div>
+        <div class="cat-header-text">
+          <div class="cat-header-label">Categoría 03</div>
+          <div class="cat-header-title">Francesinha · <em>el plato de Porto</em></div>
+          <div class="cat-header-desc">El sándwich más famoso y contundente de Portugal. Con salsa secreta, huevo y cerveza. Cada sitio tiene su receta.</div>
+        </div>
+      </div>
+      <div class="resto-grid">
+        <div class="resto-card">
+          <div class="resto-name">Brasão</div>
+          <div class="resto-location">Aliados & Poveiros</div>
+          <div class="resto-badge">Clásico</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Restaurante Capa Negra I</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Bira dos Namorados</div>
+          <div class="resto-location">Túnel de Ceuta</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Café Santiago</div>
+          <div class="resto-location">Poveiros</div>
+          <div class="resto-badge">Muy popular</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Lado B</div>
+          <div class="resto-location">Poveiros</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Santa Francesinha</div>
+          <div class="resto-location">Poveiros</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">A Regaleira</div>
+          <div class="resto-location">Porto</div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Tip de Fer:</strong> La francesinha es un plato contundente — no pidas otra cosa. Pide media si tienes poca hambre. <strong>Lado B</strong> tiene versión vegetariana. Evita los sitios en la Ribeira — son para turistas.</div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 4 · MARISCOS -->
+    <section class="cat-section fade-in" id="mariscos">
+      <div class="cat-header">
+        <div class="cat-header-icon">🦞</div>
+        <div class="cat-header-text">
+          <div class="cat-header-label">Categoría 04</div>
+          <div class="cat-header-title">Mariscos · <em>del Atlántico</em></div>
+          <div class="cat-header-desc">Porto está a 20 minutos del mar. Los mariscos son fresquísimos y los precios, mucho más razonables que en cualquier capital.</div>
+        </div>
+      </div>
+      <div class="resto-grid">
+        <div class="resto-card">
+          <div class="resto-name">Mariscaria do Bom Sucesso</div>
+          <div class="resto-location">Porto</div>
+          <div class="resto-badge">Top pick</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Mercado do Bolhão</div>
+          <div class="resto-location">Porto centro</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Marisqueira Os Lusíadas</div>
+          <div class="resto-location">Matosinhos</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Casa Moreira</div>
+          <div class="resto-location">Afurada · Vila Nova de Gaia</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Postigo do Carvão</div>
+          <div class="resto-location">Praça da Ribeira</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Marisqueira O Fernando</div>
+          <div class="resto-location">Matosinhos</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Marisqueira Couto</div>
+          <div class="resto-location">Matosinhos</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Restaurante Lage Sr. do Padrão</div>
+          <div class="resto-location">Matosinhos</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Casa Rocha</div>
+          <div class="resto-location">Foz do Douro</div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Tip de Fer:</strong> Para mariscos de calidad ve a <strong>Matosinhos</strong> — es el barrio pesquero de Porto, a 15 min en metro. Los precios son mejores y la frescura, incomparable. Pide percebes si los hay.</div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 5 · SARDINAS -->
+    <section class="cat-section fade-in" id="sardinas">
+      <div class="cat-header">
+        <div class="cat-header-icon">🐟</div>
+        <div class="cat-header-text">
+          <div class="cat-header-label">Categoría 05</div>
+          <div class="cat-header-title">Sardinas · <em>assadas</em></div>
+          <div class="cat-header-desc">Las sardinas a la brasa son el sabor del verano portugués. De junio a septiembre, el olor llena las calles.</div>
+        </div>
+      </div>
+      <div class="resto-grid">
+        <div class="resto-card">
+          <div class="resto-name">Tasquinha dos Guindais</div>
+          <div class="resto-location">Porto</div>
+          <div class="resto-badge">Favorita de Fer</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">A Grade</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Casa Serrão</div>
+          <div class="resto-location">Matosinhos</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Casa do Pescador</div>
+          <div class="resto-location">Afurada</div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Tip de Fer:</strong> Las sardinas son <strong>temporada de junio a septiembre</strong>. Fuera de esa época, mejor pedir otro pescado. Pide siempre con pimiento asado y pan de maíz.</div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 6 · SÁNDWICHES -->
+    <section class="cat-section fade-in" id="sandwiches">
+      <div class="cat-header">
+        <div class="cat-header-icon">🥖</div>
+        <div class="cat-header-text">
+          <div class="cat-header-label">Categoría 06</div>
+          <div class="cat-header-title">Sándwiches · <em>bifanas & pregos</em></div>
+          <div class="cat-header-desc">El street food portugués por excelencia. La bifana (cerdo) y el prego (ternera) son el almuerzo rápido de cualquier portuense.</div>
+        </div>
+      </div>
+      <div class="resto-grid">
+        <div class="resto-card">
+          <div class="resto-name">Conga — Casa das Bifanas</div>
+          <div class="resto-location">Porto centro</div>
+          <div class="resto-badge">Icónico</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Lado B</div>
+          <div class="resto-location">Poveiros</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Café Santiago</div>
+          <div class="resto-location">Poveiros</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Restaurante Capa Negra I</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Café Brasão Aliados</div>
+          <div class="resto-location">Aliados</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Café Nelma</div>
+          <div class="resto-location">Porto</div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Tip de Fer:</strong> <strong>Conga</strong> es el sitio más famoso de Porto para bifanas. Hay siempre cola — merece la pena esperar. Cuesta menos de 3€ y es uno de los mejores bocados de la ciudad.</div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 7 · VEGETARIANOS -->
+    <section class="cat-section fade-in" id="vegetarianos">
+      <div class="cat-header">
+        <div class="cat-header-icon">🌿</div>
+        <div class="cat-header-text">
+          <div class="cat-header-label">Categoría 07</div>
+          <div class="cat-header-title">Vegetarianos · <em>& veganos</em></div>
+          <div class="cat-header-desc">Porto ha evolucionado mucho. Hoy tiene opciones vegetarianas y veganas muy buenas — sin necesidad de sacrificar el sabor.</div>
+        </div>
+      </div>
+      <div class="resto-grid">
+        <div class="resto-card">
+          <div class="resto-name">Honest Greens</div>
+          <div class="resto-location">Porto</div>
+          <div class="resto-badge">Muy recomendado</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Vegana by Tentugal</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Nola Kitchen</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Noshi Coffee</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Da Terra</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Manna Porto</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Especie</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Kind Kitchen</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Lado B</div>
+          <div class="resto-location">Poveiros</div>
+          <div class="resto-badge">Francesinha veggie</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 8 · PASTELES DE NATA -->
+    <section class="cat-section fade-in" id="nata">
+      <div class="cat-header">
+        <div class="cat-header-icon">🥐</div>
+        <div class="cat-header-text">
+          <div class="cat-header-label">Categoría 08</div>
+          <div class="cat-header-title">Pasteles de Nata · <em>imprescindibles</em></div>
+          <div class="cat-header-desc">El pastel de nata es religión en Portugal. Caliente, con azúcar y canela por encima. No te vayas de Porto sin comer uno.</div>
+        </div>
+      </div>
+      <div class="resto-grid">
+        <div class="resto-card">
+          <div class="resto-name">Manteigaria</div>
+          <div class="resto-location">Porto</div>
+          <div class="resto-badge">Favorita de Fer</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Fábrica da Nata</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Confeitaria do Bolhão</div>
+          <div class="resto-location">Porto centro</div>
+          <div class="resto-badge">Histórica</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Casa das Tortas</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Pastelaria Tupi</div>
+          <div class="resto-location">Porto</div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Tip de Fer:</strong> Pídelo siempre <strong>acabado de salir del horno</strong> — en Manteigaria los hornean continuamente. Con café expresso corto es la combinación perfecta. Cuesta entre 1,20€ y 1,80€.</div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 9 · GLUTEN FREE -->
+    <section class="cat-section fade-in" id="glutenfree">
+      <div class="cat-header">
+        <div class="cat-header-icon">🌾</div>
+        <div class="cat-header-text">
+          <div class="cat-header-label">Categoría 09</div>
+          <div class="cat-header-title">Gluten Free · <em>sin preocupaciones</em></div>
+          <div class="cat-header-desc">Para quienes tienen intolerancia al gluten — Porto tiene cada vez más opciones seguras y deliciosas.</div>
+        </div>
+      </div>
+      <div class="resto-grid">
+        <div class="resto-card">
+          <div class="resto-name">Noshi Coffee</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Com Cuore</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Glutenfreak</div>
+          <div class="resto-location">Porto</div>
+          <div class="resto-badge">Especialista GF</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Sergio Crivelli</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Tasquinha do Bé</div>
+          <div class="resto-location">Porto</div>
+          <div class="resto-badge">Francesinha GF</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">O Paparico</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Urbana</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Bonna Pastelaria Gluten Free</div>
+          <div class="resto-location">Porto</div>
+          <div class="resto-badge">100% GF</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Cantinho do Avillez</div>
+          <div class="resto-location">Porto</div>
+        </div>
+        <div class="resto-card">
+          <div class="resto-name">Tasquinha do Caco</div>
+          <div class="resto-location">Porto</div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Tip de Fer:</strong> Avisa siempre en el restaurante — en Portugal suelen tomar en serio las intolerancias. <strong>Glutenfreak</strong> es 100% libre de gluten. <strong>Tasquinha do Bé</strong> tiene la única francesinha sin gluten de Porto.</div>
+      </div>
+    </section>
+
+    <!-- CTA BOTTOM -->
+    <div class="cta-bottom fade-in">
+      <div class="cta-bottom-title">¿Quieres conocer estos sitios<br><em>en persona?</em></div>
+      <p class="cta-bottom-text">En mis tours paso por algunos de estos lugares y te cuento las historias que no están en ninguna guía. O escríbeme y organizamos una ruta gastronómica personalizada.</p>
+      <div class="cta-row">
+        <a href="index.html#tours" class="btn-primary">Ver los tours ›</a>
+        <a href="https://wa.me/351912534766" target="_blank" class="btn-outline">Hablar con Fer</a>
+      </div>
+    </div>
+
+    <!-- OTHER CATEGORIES -->
+    <div class="other-cats fade-in">
+      <div class="other-label">Más recomendaciones</div>
+      <div class="other-grid">
+        <a href="index.html#recomendaciones" class="other-card">
+          <span class="other-emoji">✨</span>
+          <span class="other-name">Planazos en Porto</span>
+        </a>
+        <a href="index.html#recomendaciones" class="other-card">
+          <span class="other-emoji">🍷</span>
+          <span class="other-name">Bodegas de Vinho</span>
+        </a>
+        <a href="index.html#recomendaciones" class="other-card">
+          <span class="other-emoji">🌅</span>
+          <span class="other-name">Rooftops & Terrazas</span>
+        </a>
+        <a href="index.html#recomendaciones" class="other-card">
+          <span class="other-emoji">🎉</span>
+          <span class="other-name">Cervezas & Fiesta</span>
+        </a>
+        <a href="index.html#recomendaciones" class="other-card">
+          <span class="other-emoji">🛍️</span>
+          <span class="other-name">Compras & Souvenirs</span>
+        </a>
+        <a href="index.html#recomendaciones" class="other-card">
+          <span class="other-emoji">🆓</span>
+          <span class="other-name">Top 10 Gratis</span>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Porturisteando con Fer · Oporto</div>
+      <div class="footer-links">
+        <a href="mailto:fernanda.blondel@gmail.com">fernanda.blondel@gmail.com</a>
+        <a href="https://wa.me/351912534766" target="_blank">+351 912 534 766</a>
+        <a href="https://www.instagram.com/porturisteando.con.fer/" target="_blank">@porturisteando.con.fer</a>
+      </div>
+      <div class="footer-copy">Porto · Portugal · ♥</div>
+    </div>
+  </footer>
+
+  <!-- WA FLOAT -->
+  <a href="https://wa.me/351912534766" target="_blank" class="wa-float" aria-label="WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.querySelectorAll('.menu-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    // Scroll to category — renamed to avoid conflict with window.scrollTo
+    function goToSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      // Calculate offset: nav (60px) + cat-nav (~45px) + breathing room
+      const navHeight = document.querySelector('nav').offsetHeight;
+      const catNavHeight = document.getElementById('catNav').offsetHeight;
+      const offset = navHeight + catNavHeight + 12;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+
+    // Wire up buttons — update onclick in HTML via JS to avoid inline name issue
+    const sections = ['tradicional','bacalao','francesinha','mariscos','sardinas','sandwiches','vegetarianos','nata','glutenfree'];
+    const navBtns = document.querySelectorAll('.cat-nav-btn');
+
+    navBtns.forEach((btn, i) => {
+      btn.addEventListener('click', () => goToSection(sections[i]));
+    });
+
+    // Active state tracking via scroll position
+    function updateActiveTab() {
+      const navHeight = document.querySelector('nav').offsetHeight;
+      const catNavHeight = document.getElementById('catNav').offsetHeight;
+      const offset = navHeight + catNavHeight + 20;
+      const scrollY = window.pageYOffset + offset;
+
+      let activeIdx = 0;
+      sections.forEach((id, i) => {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollY) activeIdx = i;
+      });
+
+      navBtns.forEach((btn, i) => btn.classList.toggle('active', i === activeIdx));
+
+      // Scroll active btn into view within the nav strip
+      const activeBtn = navBtns[activeIdx];
+      if (activeBtn) {
+        const catNav = document.getElementById('catNav');
+        const btnLeft = activeBtn.offsetLeft;
+        const btnWidth = activeBtn.offsetWidth;
+        const navWidth = catNav.offsetWidth;
+        const scrollLeft = btnLeft - navWidth / 2 + btnWidth / 2;
+        catNav.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      }
+    }
+
+    window.addEventListener('scroll', updateActiveTab, { passive: true });
+    updateActiveTab();
+
+    // Fade-in observer
+    const fadeIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => fadeIO.observe(el));
+
+    // Trigger hero immediately
+    setTimeout(() => document.querySelectorAll('.subhero .fade-in').forEach(el => el.classList.add('visible')), 80);
+  </script>
+</body>
+</html>
