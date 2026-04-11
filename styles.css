@@ -2,21 +2,22 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:           #0c1624;
-  --bg2:          #0f1d30;
-  --bg3:          #142035;
-  --gold:         #c8902a;
-  --gold-light:   #e8b84a;
-  --gold-dim:     rgba(200,144,42,0.55);
-  --gold-pale:    rgba(200,144,42,0.1);
-  --gold-border:  rgba(200,144,42,0.25);
-  --cream:        #f0e0c0;
-  --cream-dim:    rgba(240,210,170,0.65);
-  --cream-faint:  rgba(240,210,170,0.35);
-  --white10:      rgba(255,255,255,0.05);
-  --white15:      rgba(255,255,255,0.08);
-  --radius:       14px;
-  --radius-sm:    9px;
+--blue:        #0077cc;
+  --blue-light:  #e8f4fd;
+  --blue-mid:    #3399dd;
+  --blue-dim:    rgba(0,119,204,0.55);
+  --blue-border: rgba(0,119,204,0.2);
+  --white:       #ffffff;
+  --bg-light:    #f4f8fd;
+  --bg-section:  #f0f5fb;
+  --border:      #e0eaf5;
+  --text:        #1a1a2e;
+  --text-mid:    #555566;
+  --text-light:  #888899;
+  --radius:      14px;
+  --radius-sm:   9px;
+  --shadow:      0 10px 30px rgba(0,119,204,0.08);
+  --shadow-md:   0 20px 50px rgba(0,119,204,0.12);
 }
 
 html { scroll-behavior: smooth; }
@@ -45,6 +46,30 @@ img { display: block; max-width: 100%; }
   font-style: italic; font-weight: 400; color: var(--cream);
   line-height: 1.2; margin-bottom: 14px;
 }
+
+.hero-with-photo {
+  position: relative;
+}
+
+.hero-with-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('images/fer-guia.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* garante que o conteúdo fica por cima */
+.hero-with-photo > * {
+  position: relative;
+  z-index: 1;
+}
+
 .section-title em { color: var(--gold-light); font-style: italic; }
 .section-sub {
   font-size: 14px; color: var(--cream-dim); font-weight: 300;
