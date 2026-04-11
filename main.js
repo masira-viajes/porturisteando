@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ── Category Nav — Experiencias ──
-  const expSections = ['planazos','bodegas','cervezas','rooftops','marcha'];
+  const expSections = ['planazos','bodegas','cervezas','rooftops','marcha','gratis','compras'];
   const expBtns = document.querySelectorAll('.cat-nav-btn');
   if (document.getElementById('planazos')) {
     initCategoryNav(expSections, expBtns);
