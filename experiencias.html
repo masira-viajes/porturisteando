@@ -1,623 +1,1415 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Qué hacer en Oporto más allá de los monumentos — crucero por el Duero, Fado, bodegas de Vinho do Porto, rooftops, cervecerías y la mejor vida nocturna. Por Fer, guía española en Porto.">
-  <meta name="keywords" content="qué hacer Oporto, bodegas porto, rooftops oporto, fado porto, crucero duero, vida nocturna porto, cervecerías porto">
-  <meta property="og:title" content="Porto de Noche & Experiencias · Porturisteando con Fer">
-  <meta property="og:description" content="Crucero, Fado, bodegas, rooftops y la mejor noche de Oporto — todo en un sitio.">
-  <title>Porto de Noche & Experiencias · Porturisteando con Fer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* ── PAGE SPECIFIC: EXPERIENCE & BODEGA GRIDS ── */
-    .subhero-glow2 { position: absolute; border-radius: 50%; pointer-events: none; width: 300px; height: 300px; bottom: -60px; left: -60px; background: radial-gradient(circle, rgba(20,55,120,0.18) 0%, transparent 70%); }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Qué hacer en Oporto más allá de los monumentos — crucero por el Duero, Fado, bodegas de Vinho do Porto, rooftops, cervecerías y la mejor vida nocturna. Por Fer, guía española en Porto."
+    />
+    <meta
+      name="keywords"
+      content="qué hacer Oporto, bodegas porto, rooftops oporto, fado porto, crucero duero, vida nocturna porto, cervecerías porto"
+    />
+    <meta
+      property="og:title"
+      content="Porto de Noche & Experiencias · Porturisteando con Fer"
+    />
+    <meta
+      property="og:description"
+      content="Crucero, Fado, bodegas, rooftops y la mejor noche de Oporto — todo en un sitio."
+    />
+    <title>Porto de Noche & Experiencias · Porturisteando con Fer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ── PAGE SPECIFIC: EXPERIENCE & BODEGA GRIDS ── */
+      .subhero-glow2 {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        width: 300px;
+        height: 300px;
+        bottom: -60px;
+        left: -60px;
+        background: radial-gradient(
+          circle,
+          rgba(20, 55, 120, 0.18) 0%,
+          transparent 70%
+        );
+      }
 
-    /* ── MAIN ── */
-    .main { max-width: 960px; margin: 0 auto; padding: 0 20px 80px; }
+      /* ── MAIN ── */
+      .main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px 80px;
+      }
 
-    /* ── CAT SECTION ── */
-    .cat-section { padding: 56px 0 0; scroll-margin-top: 130px; }
-    .cat-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
-    .cat-header-icon { width: 52px; height: 52px; border-radius: 13px; flex-shrink: 0; background: var(--gold-pale); border: 0.5px solid var(--gold-border); display: flex; align-items: center; justify-content: center; font-size: 24px; }
-    .cat-header-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 5px; }
-    .cat-header-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 4vw, 30px); font-style: italic; font-weight: 400; color: var(--cream); line-height: 1.15; }
-    .cat-header-title em { color: var(--gold-light); }
-    .cat-header-desc { font-size: 12.5px; color: var(--cream-faint); font-weight: 300; margin-top: 5px; line-height: 1.6; }
+      /* ── CAT SECTION ── */
+      .cat-section {
+        padding: 56px 0 0;
+        scroll-margin-top: 130px;
+      }
+      .cat-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+      .cat-header-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 13px;
+        flex-shrink: 0;
+        background: var(--gold-pale);
+        border: 0.5px solid var(--gold-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+      }
+      .cat-header-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold-dim);
+        margin-bottom: 5px;
+      }
+      .cat-header-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(22px, 4vw, 30px);
+        font-style: italic;
+        font-weight: 400;
+        color: var(--cream);
+        line-height: 1.15;
+      }
+      .cat-header-title em {
+        color: var(--gold-light);
+      }
+      .cat-header-desc {
+        font-size: 12.5px;
+        color: var(--cream-faint);
+        font-weight: 300;
+        margin-top: 5px;
+        line-height: 1.6;
+      }
 
-    /* ── EXPERIENCE CARDS (planazos) ── */
-    .exp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-    .exp-card { background: var(--white06); border: 0.5px solid var(--gold-border); border-radius: var(--radius); padding: 22px 20px; transition: all 0.22s; position: relative; overflow: hidden; }
-    .exp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-    .exp-card:hover { background: rgba(200,144,42,0.06); border-color: rgba(200,144,42,0.4); transform: translateY(-3px); }
-    .exp-card:hover::before { transform: scaleX(1); }
-    .exp-emoji { font-size: 30px; margin-bottom: 12px; }
-    .exp-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--cream); margin-bottom: 8px; line-height: 1.2; }
-    .exp-desc { font-size: 12.5px; color: var(--cream-faint); font-weight: 300; line-height: 1.6; margin-bottom: 14px; }
-    .exp-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
-    .exp-tag { display: inline-flex; align-items: center; gap: 5px; background: var(--gold-pale); border: 0.5px solid var(--gold-border); border-radius: 20px; padding: 3px 10px; font-size: 11px; color: var(--gold); font-weight: 500; }
-    .exp-price { font-size: 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--gold-light); font-weight: 400; margin-bottom: 4px; }
-    .exp-price-note { font-size: 10.5px; color: var(--cream-faint); font-weight: 300; margin-bottom: 14px; }
-    .exp-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: #0c1020; font-weight: 500; font-size: 12.5px; padding: 9px 18px; border-radius: 30px; transition: all 0.2s; border: none; cursor: pointer; }
-    .exp-cta:hover { background: var(--gold-light); }
-    .exp-cta-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 0.5px solid var(--gold-border); color: var(--cream-dim); font-size: 12.5px; padding: 9px 18px; border-radius: 30px; transition: all 0.2s; cursor: pointer; }
-    .exp-cta-outline:hover { background: var(--gold-pale); color: var(--cream); }
-    .exp-detail { font-size: 11.5px; color: var(--text-light); font-weight: 300; line-height: 1.7; } /* Changed to use text-light */
-    .exp-detail strong { color: var(--text-medium); font-weight: 500; } /* Changed to use text-medium */
+      /* ── EXPERIENCE CARDS (planazos) ── */
+      .exp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 14px;
+      }
+      .exp-card {
+        background: var(--white06);
+        border: 0.5px solid var(--gold-border);
+        border-radius: var(--radius);
+        padding: 22px 20px;
+        transition: all 0.22s;
+        position: relative;
+        overflow: hidden;
+      }
+      .exp-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s;
+      }
+      .exp-card:hover {
+        background: rgba(200, 144, 42, 0.06);
+        border-color: rgba(200, 144, 42, 0.4);
+        transform: translateY(-3px);
+      }
+      .exp-card:hover::before {
+        transform: scaleX(1);
+      }
+      .exp-emoji {
+        font-size: 30px;
+        margin-bottom: 12px;
+      }
+      .exp-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-style: italic;
+        color: var(--cream);
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+      .exp-desc {
+        font-size: 12.5px;
+        color: var(--cream-faint);
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: 14px;
+      }
+      .exp-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 14px;
+      }
+      .exp-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: var(--gold-pale);
+        border: 0.5px solid var(--gold-border);
+        border-radius: 20px;
+        padding: 3px 10px;
+        font-size: 11px;
+        color: var(--gold);
+        font-weight: 500;
+      }
+      .exp-price {
+        font-size: 22px;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        color: var(--gold-light);
+        font-weight: 400;
+        margin-bottom: 4px;
+      }
+      .exp-price-note {
+        font-size: 10.5px;
+        color: var(--cream-faint);
+        font-weight: 300;
+        margin-bottom: 14px;
+      }
+      .exp-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--gold);
+        color: #0c1020;
+        font-weight: 500;
+        font-size: 12.5px;
+        padding: 9px 18px;
+        border-radius: 30px;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+      .exp-cta:hover {
+        background: var(--gold-light);
+      }
+      .exp-cta-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        border: 0.5px solid var(--gold-border);
+        color: var(--cream-dim);
+        font-size: 12.5px;
+        padding: 9px 18px;
+        border-radius: 30px;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+      .exp-cta-outline:hover {
+        background: var(--gold-pale);
+        color: var(--cream);
+      }
+      .exp-detail {
+        font-size: 11.5px;
+        color: var(--text-light);
+        font-weight: 300;
+        line-height: 1.7;
+      } /* Changed to use text-light */
+      .exp-detail strong {
+        color: var(--text-medium);
+        font-weight: 500;
+      } /* Changed to use text-medium */
 
-    /* ── BODEGA CARDS ── */
-    .bodega-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
-    .bodega-card { background: var(--dark-transparent-06); border: 0.5px solid var(--gold-border); border-radius: var(--radius); overflow: hidden; transition: all 0.22s; } /* Changed for light theme */
-    .bodega-card:hover { border-color: rgba(0,71,171,0.45); transform: translateY(-3px); } /* Changed for blue theme */
-    .bodega-top { padding: 20px 18px 14px; }
-    .bodega-num { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 6px; }
-    .bodega-name { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--text-dark); margin-bottom: 6px; line-height: 1.2; } /* Changed to use text-dark */
-    .bodega-desc { font-size: 11.5px; color: var(--text-light); font-weight: 300; line-height: 1.55; margin-bottom: 14px; } /* Changed to use text-light */
-    .bodega-footer { border-top: 0.5px solid var(--gold-border); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; }
-    .bodega-cta { font-size: 12px; color: var(--gold); font-weight: 500; display: flex; align-items: center; gap: 5px; transition: gap 0.2s; }
-    .bodega-card:hover .bodega-cta { gap: 9px; }
-    .bodega-badge { font-size: 9.5px; color: var(--text-light); font-weight: 300; } /* Changed to use text-light */
+      /* ── BODEGA CARDS ── */
+      .bodega-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 12px;
+      }
+      .bodega-card {
+        background: var(--dark-transparent-06);
+        border: 0.5px solid var(--gold-border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: all 0.22s;
+      } /* Changed for light theme */
+      .bodega-card:hover {
+        border-color: rgba(0, 71, 171, 0.45);
+        transform: translateY(-3px);
+      } /* Changed for blue theme */
+      .bodega-top {
+        padding: 20px 18px 14px;
+      }
+      .bodega-num {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--gold-dim);
+        margin-bottom: 6px;
+      }
+      .bodega-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 19px;
+        font-style: italic;
+        color: var(--text-dark);
+        margin-bottom: 6px;
+        line-height: 1.2;
+      } /* Changed to use text-dark */
+      .bodega-desc {
+        font-size: 11.5px;
+        color: var(--text-light);
+        font-weight: 300;
+        line-height: 1.55;
+        margin-bottom: 14px;
+      } /* Changed to use text-light */
+      .bodega-footer {
+        border-top: 0.5px solid var(--gold-border);
+        padding: 12px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .bodega-cta {
+        font-size: 12px;
+        color: var(--gold);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: gap 0.2s;
+      }
+      .bodega-card:hover .bodega-cta {
+        gap: 9px;
+      }
+      .bodega-badge {
+        font-size: 9.5px;
+        color: var(--text-light);
+        font-weight: 300;
+      } /* Changed to use text-light */
 
-    /* ── LIST CARDS (cervezas) ── */
-    .list-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
-    .list-card { background: var(--white06); border: 0.5px solid var(--gold-border); border-radius: var(--radius); padding: 16px 16px 14px; transition: all 0.22s; position: relative; overflow: hidden; }
-    .list-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-    .list-card:hover { background: rgba(0,71,171,0.06); border-color: rgba(0,71,171,0.38); transform: translateY(-2px); } /* Changed for blue theme */
-    .list-card:hover::after { transform: scaleX(1); }
-    .list-name { font-size: 13.5px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; line-height: 1.3; } /* Changed to use text-dark */
-    .list-sub { font-size: 11px; color: var(--gold-dim); font-weight: 300; display: flex; align-items: center; gap: 4px; }
-    .list-sub::before { content: '·'; font-size: 16px; color: var(--gold); line-height: 1; flex-shrink: 0; }
-    .list-badge { display: inline-block; margin-top: 8px; background: var(--gold-pale); border: 0.5px solid var(--gold-border); border-radius: 20px; padding: 2px 9px; font-size: 9.5px; color: var(--gold); font-weight: 500; letter-spacing: 0.4px; text-transform: uppercase; }
+      /* ── LIST CARDS (cervezas) ── */
+      .list-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+      }
+      .list-card {
+        background: var(--white06);
+        border: 0.5px solid var(--gold-border);
+        border-radius: var(--radius);
+        padding: 16px 16px 14px;
+        transition: all 0.22s;
+        position: relative;
+        overflow: hidden;
+      }
+      .list-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s;
+      }
+      .list-card:hover {
+        background: rgba(0, 71, 171, 0.06);
+        border-color: rgba(0, 71, 171, 0.38);
+        transform: translateY(-2px);
+      } /* Changed for blue theme */
+      .list-card:hover::after {
+        transform: scaleX(1);
+      }
+      .list-name {
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--text-dark);
+        margin-bottom: 4px;
+        line-height: 1.3;
+      } /* Changed to use text-dark */
+      .list-sub {
+        font-size: 11px;
+        color: var(--gold-dim);
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .list-sub::before {
+        content: "·";
+        font-size: 16px;
+        color: var(--gold);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .list-badge {
+        display: inline-block;
+        margin-top: 8px;
+        background: var(--gold-pale);
+        border: 0.5px solid var(--gold-border);
+        border-radius: 20px;
+        padding: 2px 9px;
+        font-size: 9.5px;
+        color: var(--gold);
+        font-weight: 500;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+      }
 
-    /* ── ZONA MARCHA ── */
-    .zona-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-top: 28px; }
-    .zona-card { background: var(--dark-transparent-06); border: 0.5px solid var(--gold-border); border-radius: var(--radius); padding: 18px 20px; } /* Changed for light theme */
-    .zona-num { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 6px; }
-    .zona-title { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic; color: var(--text-dark); margin-bottom: 8px; } /* Changed to use text-dark */
-    .zona-streets { font-size: 12px; color: var(--text-light); line-height: 1.7; font-weight: 300; } /* Changed to use text-light */
+      /* ── ZONA MARCHA ── */
+      .zona-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+      }
+      .zona-card {
+        background: var(--dark-transparent-06);
+        border: 0.5px solid var(--gold-border);
+        border-radius: var(--radius);
+        padding: 18px 20px;
+      } /* Changed for light theme */
+      .zona-num {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold-dim);
+        margin-bottom: 6px;
+      }
+      .zona-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 16px;
+        font-style: italic;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+      } /* Changed to use text-dark */
+      .zona-streets {
+        font-size: 12px;
+        color: var(--text-light);
+        line-height: 1.7;
+        font-weight: 300;
+      } /* Changed to use text-light */
 
-    /* ── ROOFTOP CARDS ── */
-    .roof-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-    .roof-card { background: var(--dark-transparent-06); border: 0.5px solid var(--gold-border); border-radius: var(--radius); overflow: hidden; transition: all 0.22s; } /* Changed for light theme */
-    .roof-card:hover { border-color: rgba(0,71,171,0.45); transform: translateY(-3px); } /* Changed for blue theme */
-    .roof-header { padding: 20px 20px 0; }
-    .roof-emoji-wrap { width: 44px; height: 44px; border-radius: 11px; background: var(--gold-pale); border: 0.5px solid var(--gold-border); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 12px; }
-    .roof-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--text-dark); margin-bottom: 5px; line-height: 1.25; } /* Changed to use text-dark */
-    .roof-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
-    .roof-tag { font-size: 10px; background: var(--gold-pale); border: 0.5px solid var(--gold-border); border-radius: 20px; padding: 2px 9px; color: var(--gold); font-weight: 500; }
-    .roof-desc { font-size: 12px; color: var(--text-light); font-weight: 300; line-height: 1.6; margin-bottom: 14px; padding: 0 20px; } /* Changed to use text-light */
-    .roof-footer { border-top: 0.5px solid var(--gold-border); padding: 12px 20px; display: flex; flex-direction: column; gap: 4px; }
-    .roof-address { font-size: 11.5px; color: var(--text-light); font-weight: 300; display: flex; align-items: flex-start; gap: 6px; } /* Changed to use text-light */
-    .roof-address-icon { color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+      /* ── ROOFTOP CARDS ── */
+      .roof-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 14px;
+      }
+      .roof-card {
+        background: var(--dark-transparent-06);
+        border: 0.5px solid var(--gold-border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: all 0.22s;
+      } /* Changed for light theme */
+      .roof-card:hover {
+        border-color: rgba(0, 71, 171, 0.45);
+        transform: translateY(-3px);
+      } /* Changed for blue theme */
+      .roof-header {
+        padding: 20px 20px 0;
+      }
+      .roof-emoji-wrap {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        background: var(--gold-pale);
+        border: 0.5px solid var(--gold-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .roof-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 18px;
+        font-style: italic;
+        color: var(--text-dark);
+        margin-bottom: 5px;
+        line-height: 1.25;
+      } /* Changed to use text-dark */
+      .roof-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 10px;
+      }
+      .roof-tag {
+        font-size: 10px;
+        background: var(--gold-pale);
+        border: 0.5px solid var(--gold-border);
+        border-radius: 20px;
+        padding: 2px 9px;
+        color: var(--gold);
+        font-weight: 500;
+      }
+      .roof-desc {
+        font-size: 12px;
+        color: var(--text-light);
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: 14px;
+        padding: 0 20px;
+      } /* Changed to use text-light */
+      .roof-footer {
+        border-top: 0.5px solid var(--gold-border);
+        padding: 12px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .roof-address {
+        font-size: 11.5px;
+        color: var(--text-light);
+        font-weight: 300;
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+      } /* Changed to use text-light */
+      .roof-address-icon {
+        color: var(--gold);
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
 
-    /* ── SUB-SECTION HEADER ── */
-    .sub-section { margin-top: 36px; }
-    .sub-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dim); font-weight: 500; margin-bottom: 14px; padding-left: 2px; display: flex; align-items: center; gap: 8px; }
-    .sub-label::after { content: ''; flex: 1; height: 0.5px; background: var(--gold-border); }
+      /* ── SUB-SECTION HEADER ── */
+      .sub-section {
+        margin-top: 36px;
+      }
+      .sub-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold-dim);
+        font-weight: 500;
+        margin-bottom: 14px;
+        padding-left: 2px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .sub-label::after {
+        content: "";
+        flex: 1;
+        height: 0.5px;
+        background: var(--gold-border);
+      }
 
-    /* ── CTA BOTTOM ── */
-    .cta-bottom { margin-top: 64px; background: linear-gradient(135deg, rgba(200,144,42,0.07), rgba(15,30,55,0.5)); border: 0.5px solid var(--gold-border); border-radius: 18px; padding: 40px 36px; text-align: center; }
-    .cta-bottom-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 4vw, 30px); font-style: italic; color: var(--cream); margin-bottom: 10px; }
+      /* ── CTA BOTTOM ── */
+      .cta-bottom {
+        margin-top: 64px;
+        background: linear-gradient(
+          135deg,
+          rgba(200, 144, 42, 0.07),
+          rgba(15, 30, 55, 0.5)
+        );
+        border: 0.5px solid var(--gold-border);
+        border-radius: 18px;
+        padding: 40px 36px;
+        text-align: center;
+      }
+      .cta-bottom-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(22px, 4vw, 30px);
+        font-style: italic;
+        color: var(--cream);
+        margin-bottom: 10px;
+      }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 680px) {
-      .exp-grid, .roof-grid { grid-template-columns: 1fr; }
-      .bodega-grid, .list-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 400px) {
-      .bodega-grid, .list-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
+      /* ── RESPONSIVE ── */
+      @media (max-width: 680px) {
+        .exp-grid,
+        .roof-grid {
+          grid-template-columns: 1fr;
+        }
+        .bodega-grid,
+        .list-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 400px) {
+        .bodega-grid,
+        .list-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <a href="porturisteando.html" class="nav-logo"
+          >Portu<span>risteando</span></a
+        >
+        <ul class="nav-links" style="color: var(--text-dark)">
+          <li>
+            <a href="porturisteando.html#recomendaciones">Recomendaciones</a>
+          </li>
+          <li><a href="porturisteando.html#tours">Tours</a></li>
+          <li><a href="porturisteando.html#servicios">Servicios</a></li>
+          <li><a href="porturisteando.html#masira">Más destinos</a></li>
+        </ul>
+        <a href="https://wa.me/351910210968" target="_blank" class="nav-cta"
+          >Contactar</a
+        >
+        <button class="nav-menu-btn" id="menuBtn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="porturisteando.html" class="nav-logo">Portu<span>risteando</span></a>
-      <ul class="nav-links" style="color: var(--text-dark);">
-        <li><a href="porturisteando.html#recomendaciones">Recomendaciones</a></li>
-        <li><a href="porturisteando.html#tours">Tours</a></li>
-        <li><a href="porturisteando.html#servicios">Servicios</a></li>
-        <li><a href="porturisteando.html#masira">Más destinos</a></li>
-      </ul>
-      <a href="https://wa.me/351910210968" target="_blank" class="nav-cta">Contactar</a>
-      <button class="nav-menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="porturisteando.html" class="menu-link">Inicio</a>
+      <a href="porturisteando.html#recomendaciones" class="menu-link"
+        >Recomendaciones</a
+      >
+      <a href="porturisteando.html#tours" class="menu-link">Tours</a>
+      <a href="porturisteando.html#servicios" class="menu-link">Servicios</a>
+      <a
+        href="https://wa.me/351910210968"
+        target="_blank"
+        style="color: var(--light-blue)"
+        >Contactar ↗</a
+      >
     </div>
-  </nav>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="porturisteando.html" class="menu-link">Inicio</a>
-    <a href="porturisteando.html#recomendaciones" class="menu-link">Recomendaciones</a>
-    <a href="porturisteando.html#tours" class="menu-link">Tours</a>
-    <a href="porturisteando.html#servicios" class="menu-link">Servicios</a>
-    <a href="https://wa.me/351910210968" target="_blank" style="color:var(--light-blue)">Contactar ↗</a>
-  </div>
-
-  <!-- HERO -->
-<section class="subhero subhero-with-photo" id="inicio">
-  <img src="images/experiencias.jpg" alt="" class="subhero-bg-img">
-    <div class="subhero-glow"></div>
-    <div class="subhero-glow2"></div>
-    <div class="subhero-inner">
-      <div class="breadcrumb fade-in">
-        <a href="porturisteando.html">Inicio</a>
-        <span style="color:var(--cream-faint)">›</span>
-        <span>Porto de Noche & Experiencias</span>
-      </div>
-      <div class="subhero-label fade-in" style="color: var(--dim-blue);">Experiencias · Ocio · Vida nocturna</div>
-      <h1 class="subhero-title fade-in" style="color: var(--text-dark);">Porto de Noche<br><em style="color: var(--light-blue);">&amp; Experiencias</em></h1>
-      <p class="subhero-desc fade-in" style="margin-top: 10px; color: var(--text-light);">Todo lo que hacer en Oporto más allá de los monumentos — experiencias únicas, las mejores bodegas, rooftops con vistas al Duero y la noche portuense de la mano de quien vive aquí.</p>
-      <div class="subhero-meta fade-in">
-        <div class="subhero-pill">✨ 4 planazos con precio</div>
-        <div class="subhero-pill">🍷 4 bodegas</div>
-        <div class="subhero-pill">🌅 5 rooftops</div>
-        <div class="subhero-pill">🎉 Zonas de marcha</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAT NAV -->
-  <div class="cat-nav" id="catNav">
-    <div class="cat-nav-inner">
-      <button class="cat-nav-btn active"><span class="cat-nav-emoji">✨</span>Planazos</button>
-      <button class="cat-nav-btn"><span class="cat-nav-emoji">🍷</span>Bodegas de Vinho</button>
-      <button class="cat-nav-btn"><span class="cat-nav-emoji">🍺</span>Cervezas & Vino</button>
-      <button class="cat-nav-btn"><span class="cat-nav-emoji">🌅</span>Rooftops & Terrazas</button>
-      <button class="cat-nav-btn"><span class="cat-nav-emoji">🎉</span>Ir de Marcha</button>
-    </div>
-  </div>
-
-  <!-- MAIN -->
-  <div class="main">
-
-    <!-- ══ 1 · PLANAZOS ══ -->
-    <section class="cat-section fade-in" id="planazos">
-      <div class="cat-header">
-        <div class="cat-header-icon">✨</div>
-        <div class="cat-header-text">
-          
-          <div class="cat-header-title" style="color: var(--text-dark);">Planazos y <em style="color: var(--light-blue);">descuentos</em></div>
-          <div class="cat-header-desc" style="color: var(--text-light);">Experiencias imprescindibles en Oporto — con precios especiales para los que vienen de mi parte.</div>
+    <!-- HERO -->
+    <section class="subhero subhero-with-photo" id="inicio">
+      <img src="images/experiencias.jpg" alt="" class="subhero-bg-img" />
+      <div class="subhero-glow"></div>
+      <div class="subhero-glow2"></div>
+      <div class="subhero-inner">
+        <div class="breadcrumb fade-in">
+          <a href="porturisteando.html">Inicio</a>
+          <span style="color: var(--cream-faint)">›</span>
+          <span>Porto de Noche & Experiencias</span>
         </div>
-      </div>
-
-      <div class="exp-grid">
-
-        <!-- Crucero -->
-        <div class="exp-card">
-          <div class="tour-img">
-            <img src="images/cruise.jpg">
-          </div>
-          <div class="exp-name">Crucero de los 6 Puentes</div>
-          <div class="exp-desc" style="color: var(--text-light);">Navega por el río Duero y pasa bajo los seis puentes históricos de Porto. Una de las experiencias más bonitas de la ciudad, especialmente al atardecer.</div>
-          <div class="exp-meta">
-            <span class="exp-tag">📍 Douro Acima · Ribeira</span>
-            <span class="exp-tag">🕙 10h–16h cada 30 min</span>
-          </div>
-          <div class="exp-price">18 €</div>
-          <div class="exp-price-note" style="color: var(--text-light);">Con el ticket de Fer — descuento de 2 € sobre el precio normal</div>
-          <div class="exp-detail" style="color: var(--text-light);"><strong>Cómo reservar:</strong> Presenta el ticket en el embarcadero de Douro Acima en la Ribeira. Sin reserva previa necesaria.</div>
+        <div class="subhero-label fade-in" style="color: var(--dim-blue)">
+          Experiencias · Ocio · Vida nocturna
         </div>
-
-        <!-- Fado -->
-        <div class="exp-card">
-          <div class="tour-img">
-            <img src="images/fado.jpg">
-          </div>
-          <div class="exp-name">Fado Presidencial</div>
-          <div class="exp-desc" style="color: var(--text-light);">El espectáculo de fado más auténtico de Porto. Una hora de música tradicional portuguesa con copa de vino incluida — una experiencia que no olvidarás.</div>
-          <div class="exp-meta">
-            <span class="exp-tag">📍 Praça Trindade 182, Porto</span>
-            <span class="exp-tag">🕕 18h–19h / 19h30–20h30</span>
-          </div>
-          <div class="exp-price">15 € <span style="font-size:14px;color:var(--text-light)">+ copa de vino 🍷</span></div>
-          <div class="exp-price-note" style="color: var(--text-light);">Precio especial con voucher de Fer — menciona que vas de su parte</div>
-          <a href="https://wa.link/xp9h7b" target="_blank" class="exp-cta" style="margin-top:4px">Reservar por WhatsApp →</a>
+        <h1 class="subhero-title fade-in" style="color: var(--text-dark)">
+          Porto de Noche<br /><em style="color: var(--light-blue)"
+            >&amp; Experiencias</em
+          >
+        </h1>
+        <p
+          class="subhero-desc fade-in"
+          style="margin-top: 10px; color: var(--text-light)"
+        >
+          Todo lo que hacer en Porto más allá de los monumentos — experiencias
+          únicas, las mejores bodegas, rooftops con vistas al Duero y la noche
+          portuense de la mano de quien vive aquí.
+        </p>
+        <div class="subhero-meta fade-in">
+          <div class="subhero-pill">✨ 4 planazos con precio</div>
+          <div class="subhero-pill">🍷 4 bodegas</div>
+          <div class="subhero-pill">🌅 5 rooftops</div>
+          <div class="subhero-pill">🎉 Zonas de marcha</div>
         </div>
-
-        <!-- Sé Catedral -->
-        <div class="exp-card">
-          <div class="tour-img">
-            <img src="images/catedral.jpg">
-          </div>
-          <div class="exp-name">Sé Catedral do Porto</div>
-          <div class="exp-desc" style="color: var(--text-light);">La segunda catedral más antigua de Portugal, situada en la colina más alta de la ciudad. Sube la torre sur y maravíllate con las vistas al Centro Histórico, el Puente Luiz I y el Duero.</div>
-          <div class="exp-meta">
-            <span class="exp-tag">📍 Terreiro da Sé, Porto</span>
-            <span class="exp-tag">🏆 Patrimonio UNESCO</span>
-          </div>
-          <div class="exp-price">4 €</div>
-          <div class="exp-price-note" style="color: var(--text-light);">6 € incluyendo el Palácio Episcopal — precios aproximados</div>
-          <div class="exp-detail" style="color: var(--text-light);"><strong>Tip de Fer:</strong> Ve a primera hora de la mañana para evitar colas. Las vistas desde la torre son las mejores de todo Porto.</div>
-        </div>
-
-        <!-- Palácio da Bolsa -->
-        <div class="exp-card">
-          <div class="tour-img">
-            <img src="images/palacio.jpg">
-          </div>
-          <div class="exp-name">Palácio da Bolsa</div>
-          <div class="exp-desc" style="color: var(--text-light);">El primer edificio de la antigua Cámara de Comercio de Porto. No te pierdas su impresionante arquitectura neoclásica y el majestuoso Salón Árabe, una de las salas más espectaculares de Portugal.</div>
-          <div class="exp-meta">
-            <span class="exp-tag">📍 Rua de Ferreira Borges</span>
-            <span class="exp-tag">⏱ Visita guiada incluida</span>
-          </div>
-          <div class="exp-price">13 €</div>
-          <div class="exp-price-note" style="color: var(--text-light);">Incluye visita guiada — precios aproximados</div>
-          <div class="exp-detail" style="color: var(--text-light);"><strong>Tip de Fer:</strong> El Salón Árabe tardó 18 años en construirse. La guía explica todos los detalles — merece la pena escucharla completa.</div>
-        </div>
-
-      </div>
-      <div class="tip-box">
-        <div class="tip-icon">💡</div>
-        <div class="tip-text"><strong>Tip de Fer:</strong> El Crucero + Fado en el mismo día es el plan perfecto para una tarde-noche en Porto. Crucero a las 16h, paseo por la Ribeira y Fado a las 19h30. Resérvame el Fado por WhatsApp con antelación — las sesiones se llenan.</div>
       </div>
     </section>
 
-    <div class="section-divider"></div>
-
-    <!-- ══ 2 · BODEGAS ══ -->
-    <section class="cat-section fade-in" id="bodegas">
-      <div class="cat-header">
-        <div class="cat-header-icon">🍷</div>
-        <div class="cat-header-text">
-          <div class="cat-header-title" style="color: var(--text-dark);">Bodegas de <em style="color: var(--light-blue);">Vinho do Porto</em></div>
-          <div class="cat-header-desc" style="color: var(--text-light);">Vila Nova de Gaia, al otro lado del Duero, alberga las mejores bodegas del mundo para el Vinho do Porto. Visita guiada, degustación y vistas incluidas.</div>
-        </div>
+    <!-- CAT NAV -->
+    <div class="cat-nav" id="catNav">
+      <div class="cat-nav-inner">
+        <button class="cat-nav-btn active">
+          <span class="cat-nav-emoji">✨</span>Planazos
+        </button>
+        <button class="cat-nav-btn">
+          <span class="cat-nav-emoji">🍷</span>Bodegas de Vinho
+        </button>
+        <button class="cat-nav-btn">
+          <span class="cat-nav-emoji">🍺</span>Cervezas & Vino
+        </button>
+        <button class="cat-nav-btn">
+          <span class="cat-nav-emoji">🌅</span>Rooftops & Terrazas
+        </button>
+        <button class="cat-nav-btn">
+          <span class="cat-nav-emoji">🎉</span>Ir de Marcha
+        </button>
       </div>
+    </div>
 
-      <div class="bodega-grid">
+    <!-- MAIN -->
+    <div class="main">
+      <!-- ══ 1 · PLANAZOS ══ -->
+      <section class="cat-section fade-in" id="planazos">
+        <div class="cat-header">
+          <div class="cat-header-icon">✨</div>
+          <div class="cat-header-text">
+            <div class="cat-header-title" style="color: var(--text-dark)">
+              Planazos y <em style="color: var(--light-blue)">descuentos</em>
+            </div>
+            <div class="cat-header-desc" style="color: var(--text-light)">
+              Experiencias imprescindibles en Oporto — con precios especiales
+              para los que vienen de mi parte.
+            </div>
+          </div>
+        </div>
 
-        <div class="bodega-card">
-          <div class="bodega-top">
+        <div class="exp-grid">
+          <!-- Crucero -->
+          <div class="exp-card">
             <div class="tour-img">
-            <img src="images/calem.jpg">
-          </div>
-            <div class="bodega-name" style="color: var(--text-dark);">Calem</div>
-            <div class="bodega-desc" style="color: var(--text-light);">Una de las bodegas más visitadas de Gaia. Tour completo por las caves con degustación de 2 vinos y espectáculo de fado incluido en algunas sesiones.</div>
-          </div>
-          <div class="bodega-footer">
-            <a href="https://www.civitatis.com/es/oporto/visita-guiada-bodega-calem/?aid=12861&cmp=guiafernanda" target="_blank" class="bodega-cta">Reservar con Fer →</a>
-            <span class="bodega-badge">Civitatis</span>
-          </div>
-        </div>
-
-        <div class="bodega-card">
-          <div class="bodega-top">
-                <div class="tour-img">
-            <img src="images/pocas.jpg">
-          </div>
-            <div class="bodega-name" style="color: var(--text-dark);">Poças</div>
-            <div class="bodega-desc" style="color: var(--text-light);">Bodega familiar fundada en 1918. Ambiente más íntimo y auténtico que las grandes, con excelentes vinos tawny y colheita. Perfecta para los amantes del vino de verdad.</div>
-          </div>
-          <div class="bodega-footer">
-            <a href="https://www.civitatis.com/es/oporto/visita-bodega-pocas/?aid=12861&cmp=guiafernanda" target="_blank" class="bodega-cta">Reservar con Fer →</a>
-            <span class="bodega-badge">Civitatis</span>
-          </div>
-        </div>
-
-        <div class="bodega-card">
-          <div class="bodega-top">
-                <div class="tour-img">
-            <img src="images/burmester.jpg">
-          </div>
-            <div class="bodega-name" style="color: var(--text-dark);">Burmester</div>
-            <div class="bodega-desc" style="color: var(--text-light);">Fundada en 1730, es una de las más antiguas de Gaia. Destaca por sus Vintage y sus Colheita de décadas pasadas. Visita muy completa con degustación premium.</div>
-          </div>
-          <div class="bodega-footer">
-            <a href="https://www.civitatis.com/es/oporto/visita-bodega-burmester/?aid=12861&cmp=guiafernanda" target="_blank" class="bodega-cta">Reservar con Fer →</a>
-            <span class="bodega-badge">Civitatis</span>
-          </div>
-        </div>
-
-        <div class="bodega-card">
-          <div class="bodega-top">
-                <div class="tour-img">
-            <img src="images/grahams.jpg">
-          </div>
-            <div class="bodega-name" style="color: var(--text-dark);">Grahams</div>
-            <div class="bodega-desc" style="color: var(--text-light);">Marca británica legendaria con más de 200 años en el Duero. Las vistas desde sus terrazas son de las mejores de Gaia. El Lodge restaurant es una joya.</div>
-          </div>
-          <div class="bodega-footer">
-            <a href="https://www.civitatis.com/es/oporto/visita-bodega-grahams/?aid=12861&cmp=guiafernanda" target="_blank" class="bodega-cta">Reservar con Fer →</a>
-            <span class="bodega-badge">Civitatis</span>
-          </div>
-        </div>
-
-      </div>
-      <div class="tip-box">
-        <div class="tip-icon">💡</div>
-        <div class="tip-text"><strong>Tip de Fer:</strong> Las bodegas están todas en Vila Nova de Gaia — cruza el Puente Luiz I a pie desde la Ribeira (10 min a pie). Reserva siempre con antelación, especialmente en verano. Los links de arriba llevan a Civitatis con mi referencia — gracias por usarlos 🙏</div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- ══ 3 · CERVEZAS & VINO ══ -->
-    <section class="cat-section fade-in" id="cervezas">
-      <div class="cat-header">
-        <div class="cat-header-icon">🍺</div>
-        <div class="cat-header-text">
-          
-          <div class="cat-header-title" style="color: var(--text-dark);">Cervezas, Vinos <em style="color: var(--light-blue);">&amp; buenos ratos</em></div>
-          <div class="cat-header-desc" style="color: var(--text-light);">Porto tiene una escena de bares y cervecerías artesanas que ha explotado en los últimos años. Aquí mis favoritos.</div>
-        </div>
-      </div>
-
-      <div class="sub-section">
-        <div class="sub-label">🍺 Cervecerías artesanas</div>
-        <div class="list-grid">
-          <div class="list-card">
-            <div class="list-name">Fábrica Nortada</div>
-            <div class="list-sub">Cerveza artesana portuense</div>
-            <div class="list-badge">Favorita de Fer</div>
-          </div>
-          <div class="list-card">
-            <div class="list-name">Espaço 77</div>
-            <div class="list-sub">Porto centro</div>
-          </div>
-          <div class="list-card">
-            <div class="list-name">Armazém da Cerveja</div>
-            <div class="list-sub">Gran selección craft</div>
-          </div>
-          <div class="list-card">
-            <div class="list-name">Taberna Aduela</div>
-            <div class="list-sub">Ambiente tradicional</div>
-          </div>
-          <div class="list-card">
-            <div class="list-name">Catraio Craft Beer Shop</div>
-            <div class="list-sub">200+ referencias</div>
-            <div class="list-badge">Paraíso cervecero</div>
-          </div>
-          <div class="list-card">
-            <div class="list-name">Maus Hábitos</div>
-            <div class="list-sub">Bar cultural · 4º piso</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="sub-section">
-        <div class="sub-label">🍷 Bares de vino</div>
-        <div class="list-grid">
-          <div class="list-card">
-            <div class="list-name">The Wine Box</div>
-            <div class="list-sub">Viños portugueses</div>
-            <div class="list-badge">Top pick</div>
-          </div>
-          <div class="list-card">
-            <div class="list-name">Capela Incomum</div>
-            <div class="list-sub">Ambiente singular</div>
-          </div>
-          <div class="list-card">
-            <div class="list-name">Pipa Velha</div>
-            <div class="list-sub">Tasca de vinos</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tip-box">
-        <div class="tip-icon">💡</div>
-        <div class="tip-text"><strong>Tip de Fer:</strong> <strong>Fábrica Nortada</strong> tiene jardín exterior enorme — perfecta para tardes de verano. <strong>Maus Hábitos</strong> es punto de encuentro de la escena cultural de Porto: conciertos, exposiciones y buena música. <strong>Catraio</strong> te deja probar antes de comprar.</div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- ══ 4 · ROOFTOPS ══ -->
-    <section class="cat-section fade-in" id="rooftops">
-      <div class="cat-header">
-        <div class="cat-header-icon">🌅</div>
-        <div class="cat-header-text">
-          <div class="cat-header-title" style="color: var(--text-dark);">Rooftops <em style="color: var(--light-blue);">&amp; terrazas con vistas</em></div>
-          <div class="cat-header-desc" style="color: var(--text-light);">Porto desde las alturas — los mejores sitios para ver el atardecer, el Duero y el Centro Histórico con un cóctel en la mano.</div>
-        </div>
-      </div>
-
-      <div class="roof-grid">
-
-        <div class="roof-card">
-          <div class="roof-header">
-            <div class="roof-emoji-wrap">🌇</div>
-            <div class="roof-name" style="color: var(--text-dark);">Terrace Lounge 360° — Espaço Porto Cruz</div>
-            <div class="roof-tags">
-              <span class="roof-tag">Terraza exterior</span>
-              <span class="roof-tag">Vila Nova de Gaia</span>
-              <span class="roof-tag">Vistas 360°</span>
+              <img src="images/cruise.jpg" />
+            </div>
+            <div class="exp-name">Crucero de los 6 Puentes</div>
+            <div class="exp-desc" style="color: var(--text-light)">
+              Navega por el río Duero y pasa bajo los seis puentes históricos de
+              Porto. Una de las experiencias más bonitas de la ciudad,
+              especialmente al atardecer.
+            </div>
+            <div class="exp-meta">
+              <span class="exp-tag">📍 Douro Acima · Ribeira</span>
+              <span class="exp-tag">🕙 10h–16h cada 30 min</span>
+            </div>
+            <div class="exp-price">18 €</div>
+            <div class="exp-price-note" style="color: var(--text-light)">
+              Con el ticket de Fer — descuento de 2 € sobre el precio normal
+            </div>
+            <div class="exp-detail" style="color: var(--text-light)">
+              <strong>Cómo reservar:</strong> Presenta el ticket en el
+              embarcadero de Douro Acima en la Ribeira. Sin reserva previa
+              necesaria.
             </div>
           </div>
-          <div class="roof-desc" style="color: var(--text-light);">Terraza panorámica con vistas a todo Porto desde Gaia. Una de las mejores perspectivas del Puente Luiz I y la Ribeira. Cócteles y Vinho do Porto.</div>
-          <div class="roof-footer">
-            <div class="roof-address"><span class="roof-address-icon">📍</span>Largo Miguel Bombarda 23, 4400-222 Vila Nova de Gaia</div>
-            <div class="roof-phone">☎ 22 092 5401</div>
-          </div>
-        </div>
 
-        <div class="roof-card">
-          <div class="roof-header">
-            <div class="roof-emoji-wrap">⚽</div>
-            <div class="roof-name" style="color: var(--text-dark);">Guindalense FC</div>
-            <div class="roof-tags">
-              <span class="roof-tag">Música en vivo</span>
-              <span class="roof-tag">Comida en el bar</span>
-              <span class="roof-tag">Local auténtico</span>
+          <!-- Fado -->
+          <div class="exp-card">
+            <div class="tour-img">
+              <img src="images/fado.jpg" />
+            </div>
+            <div class="exp-name">Fado Presidencial</div>
+            <div class="exp-desc" style="color: var(--text-light)">
+              El espectáculo de fado más auténtico de Porto. Una hora de música
+              tradicional portuguesa con copa de vino incluida — una experiencia
+              que no olvidarás.
+            </div>
+            <div class="exp-meta">
+              <span class="exp-tag">📍 Praça Trindade 182, Porto</span>
+              <span class="exp-tag">🕕 18h–19h / 19h30–20h30</span>
+            </div>
+            <div class="exp-price">
+              15 €
+              <span style="font-size: 14px; color: var(--text-light)"
+                >+ copa de vino 🍷</span
+              >
+            </div>
+            <div class="exp-price-note" style="color: var(--text-light)">
+              Precio especial con voucher de Fer — menciona que vas de su parte
+            </div>
+            <a
+              href="https://wa.link/xp9h7b"
+              target="_blank"
+              class="exp-cta"
+              style="margin-top: 4px"
+              >Reservar por WhatsApp →</a
+            >
+          </div>
+
+          <!-- Sé Catedral -->
+          <div class="exp-card">
+            <div class="tour-img">
+              <img src="images/catedral.jpg" />
+            </div>
+            <div class="exp-name">Sé Catedral do Porto</div>
+            <div class="exp-desc" style="color: var(--text-light)">
+              La segunda catedral más antigua de Portugal, situada en la colina
+              más alta de la ciudad. Sube la torre sur y maravíllate con las
+              vistas al Centro Histórico, el Puente Luiz I y el Duero.
+            </div>
+            <div class="exp-meta">
+              <span class="exp-tag">📍 Terreiro da Sé, Porto</span>
+              <span class="exp-tag">🏆 Patrimonio UNESCO</span>
+            </div>
+            <div class="exp-price">4 €</div>
+            <div class="exp-price-note" style="color: var(--text-light)">
+              6 € incluyendo el Palácio Episcopal — precios aproximados
+            </div>
+            <div class="exp-detail" style="color: var(--text-light)">
+              <strong>Tip de Fer:</strong> Ve a primera hora de la mañana para
+              evitar colas. Las vistas desde la torre son las mejores de todo
+              Porto.
             </div>
           </div>
-          <div class="roof-desc" style="color: var(--text-light);">El club de fútbol más pintoresco de Porto, colgado sobre los Guindais con vistas directas al Duero. Conciertos en vivo y una de las mejores vistas de la ciudad.</div>
-          <div class="roof-footer">
-            <div class="roof-address"><span class="roof-address-icon">📍</span>Escada dos Guindais 43, 4000-337 Porto</div>
-            <div class="roof-phone">☎ 22 203 4246</div>
-          </div>
-        </div>
 
-        <div class="roof-card">
-          <div class="roof-header">
-            <div class="roof-emoji-wrap">🏛️</div>
-            <div class="roof-name" style="color: var(--text-dark);">WOW — World of Wine</div>
-            <div class="roof-tags">
-              <span class="roof-tag">Museos</span>
-              <span class="roof-tag">Restaurantes</span>
-              <span class="roof-tag">Bodegas</span>
+          <!-- Palácio da Bolsa -->
+          <div class="exp-card">
+            <div class="tour-img">
+              <img src="images/palacio.jpg" />
+            </div>
+            <div class="exp-name">Palácio da Bolsa</div>
+            <div class="exp-desc" style="color: var(--text-light)">
+              El primer edificio de la antigua Cámara de Comercio de Porto. No
+              te pierdas su impresionante arquitectura neoclásica y el
+              majestuoso Salón Árabe, una de las salas más espectaculares de
+              Portugal.
+            </div>
+            <div class="exp-meta">
+              <span class="exp-tag">📍 Rua de Ferreira Borges</span>
+              <span class="exp-tag">⏱ Visita guiada incluida</span>
+            </div>
+            <div class="exp-price">13 €</div>
+            <div class="exp-price-note" style="color: var(--text-light)">
+              Incluye visita guiada — precios aproximados
+            </div>
+            <div class="exp-detail" style="color: var(--text-light)">
+              <strong>Tip de Fer:</strong> El Salón Árabe tardó 18 años en
+              construirse. La guía explica todos los detalles — merece la pena
+              escucharla completa.
             </div>
           </div>
-          <div class="roof-desc" style="color: var(--text-light);">Complejo cultural en Gaia que narra la historia del vino portugués. Museos, restaurantes, bares y bodegas en un espacio espectacular con terrazas con vistas.</div>
-          <div class="roof-footer">
-            <div class="roof-address"><span class="roof-address-icon">📍</span>Rua do Choupelo 39, 4400-088 Vila Nova de Gaia</div>
-            <div class="roof-phone">☎ 22 012 1200</div>
+        </div>
+        <div class="tip-box">
+          <div class="tip-icon">💡</div>
+          <div class="tip-text">
+            <strong>Tip de Fer:</strong> El Crucero + Fado en el mismo día es el
+            plan perfecto para una tarde-noche en Porto. Crucero a las 16h,
+            paseo por la Ribeira y Fado a las 19h30. Resérvame el Fado por
+            WhatsApp con antelación — las sesiones se llenan.
           </div>
         </div>
+      </section>
 
-        <div class="roof-card">
-          <div class="roof-header">
-            <div class="roof-emoji-wrap">🍸</div>
-            <div class="roof-name" style="color: var(--text-dark);">Bite Rooftop Gaia</div>
-            <div class="roof-tags">
-              <span class="roof-tag">Terraza exterior</span>
-              <span class="roof-tag">Bar & comida</span>
-              <span class="roof-tag">Moderno</span>
+      <div class="section-divider"></div>
+
+      <!-- ══ 2 · BODEGAS ══ -->
+      <section class="cat-section fade-in" id="bodegas">
+        <div class="cat-header">
+          <div class="cat-header-icon">🍷</div>
+          <div class="cat-header-text">
+            <div class="cat-header-title" style="color: var(--text-dark)">
+              Bodegas de
+              <em style="color: var(--light-blue)">Vinho do Porto</em>
+            </div>
+            <div class="cat-header-desc" style="color: var(--text-light)">
+              Vila Nova de Gaia, al otro lado del Duero, alberga las mejores
+              bodegas del mundo para el Vinho do Porto. Visita guiada,
+              degustación y vistas incluidas.
             </div>
           </div>
-          <div class="roof-desc" style="color: var(--text-light);">Rooftop contemporáneo en Gaia con barra de cocktails y tapas. Vistas al skyline de Porto y ambiente desenfadado. Perfecto para el after-work.</div>
-          <div class="roof-footer">
-            <div class="roof-address"><span class="roof-address-icon">📍</span>R. de Cabo Simão 10, 4430-033 Vila Nova de Gaia</div>
-            <div class="roof-phone">☎ 938 973 770</div>
-          </div>
         </div>
 
-        <div class="roof-card">
-          <div class="roof-header">
-            <div class="roof-emoji-wrap">🌹</div>
-            <div class="roof-name" style="color: var(--text-dark);">Rooftop Flores</div>
-            <div class="roof-tags">
-              <span class="roof-tag">Música en vivo · Vi–Sá</span>
-              <span class="roof-tag">Vistas Catedral</span>
-              <span class="roof-tag">Tapas & cócteles</span>
+        <div class="bodega-grid">
+          <div class="bodega-card">
+            <div class="bodega-top">
+              <div class="tour-img">
+                <img src="images/calem.jpg" />
+              </div>
+              <div class="bodega-name" style="color: var(--text-dark)">
+                Calem
+              </div>
+              <div class="bodega-desc" style="color: var(--text-light)">
+                Una de las bodegas más visitadas de Gaia. Tour completo por las
+                caves con degustación de 2 vinos y espectáculo de fado incluido
+                en algunas sesiones.
+              </div>
+            </div>
+            <div class="bodega-footer">
+              <a
+                href="https://www.civitatis.com/es/oporto/visita-guiada-bodega-calem/?aid=12861&cmp=guiafernanda"
+                target="_blank"
+                class="bodega-cta"
+                >Reservar con Fer →</a
+              >
+              <span class="bodega-badge">Civitatis</span>
             </div>
           </div>
-          <div class="roof-desc" style="color: var(--text-light);">De las mejores vistas hacia el Centro Histórico y la Sé Catedral de Porto. Tapas y cócteles de autor. Los viernes y sábados con música en vivo.</div>
-          <div class="roof-footer">
-            <div class="roof-address"><span class="roof-address-icon">📍</span>Rua da Vitória 177, Porto</div>
+
+          <div class="bodega-card">
+            <div class="bodega-top">
+              <div class="tour-img">
+                <img src="images/pocas.jpg" />
+              </div>
+              <div class="bodega-name" style="color: var(--text-dark)">
+                Poças
+              </div>
+              <div class="bodega-desc" style="color: var(--text-light)">
+                Bodega familiar fundada en 1918. Ambiente más íntimo y auténtico
+                que las grandes, con excelentes vinos tawny y colheita. Perfecta
+                para los amantes del vino de verdad.
+              </div>
+            </div>
+            <div class="bodega-footer">
+              <a
+                href="https://www.civitatis.com/es/oporto/visita-bodega-pocas/?aid=12861&cmp=guiafernanda"
+                target="_blank"
+                class="bodega-cta"
+                >Reservar con Fer →</a
+              >
+              <span class="bodega-badge">Civitatis</span>
+            </div>
+          </div>
+
+          <div class="bodega-card">
+            <div class="bodega-top">
+              <div class="tour-img">
+                <img src="images/burmester.jpg" />
+              </div>
+              <div class="bodega-name" style="color: var(--text-dark)">
+                Burmester
+              </div>
+              <div class="bodega-desc" style="color: var(--text-light)">
+                Fundada en 1730, es una de las más antiguas de Gaia. Destaca por
+                sus Vintage y sus Colheita de décadas pasadas. Visita muy
+                completa con degustación premium.
+              </div>
+            </div>
+            <div class="bodega-footer">
+              <a
+                href="https://www.civitatis.com/es/oporto/visita-bodega-burmester/?aid=12861&cmp=guiafernanda"
+                target="_blank"
+                class="bodega-cta"
+                >Reservar con Fer →</a
+              >
+              <span class="bodega-badge">Civitatis</span>
+            </div>
+          </div>
+
+          <div class="bodega-card">
+            <div class="bodega-top">
+              <div class="tour-img">
+                <img src="images/grahams.jpg" />
+              </div>
+              <div class="bodega-name" style="color: var(--text-dark)">
+                Grahams
+              </div>
+              <div class="bodega-desc" style="color: var(--text-light)">
+                Marca británica legendaria con más de 200 años en el Duero. Las
+                vistas desde sus terrazas son de las mejores de Gaia. El Lodge
+                restaurant es una joya.
+              </div>
+            </div>
+            <div class="bodega-footer">
+              <a
+                href="https://www.civitatis.com/es/oporto/visita-bodega-grahams/?aid=12861&cmp=guiafernanda"
+                target="_blank"
+                class="bodega-cta"
+                >Reservar con Fer →</a
+              >
+              <span class="bodega-badge">Civitatis</span>
+            </div>
+          </div>
+        </div>
+        <div class="tip-box">
+          <div class="tip-icon">💡</div>
+          <div class="tip-text">
+            <strong>Tip de Fer:</strong> Las bodegas están todas en Vila Nova de
+            Gaia — cruza el Puente Luiz I a pie desde la Ribeira (10 min a pie).
+            Reserva siempre con antelación, especialmente en verano. Los links
+            de arriba llevan a Civitatis con mi referencia — gracias por usarlos
+            🙏
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ══ 3 · CERVEZAS & VINO ══ -->
+      <section class="cat-section fade-in" id="cervezas">
+        <div class="cat-header">
+          <div class="cat-header-icon">🍺</div>
+          <div class="cat-header-text">
+            <div class="cat-header-title" style="color: var(--text-dark)">
+              Cervezas, Vinos
+              <em style="color: var(--light-blue)">&amp; buenos ratos</em>
+            </div>
+            <div class="cat-header-desc" style="color: var(--text-light)">
+              Porto tiene una escena de bares y cervecerías artesanas que ha
+              explotado en los últimos años. Aquí mis favoritos.
+            </div>
           </div>
         </div>
 
-      </div>
-      <div class="tip-box">
-        <div class="tip-icon">💡</div>
-        <div class="tip-text"><strong>Tip de Fer:</strong> Para el atardecer, ve al <strong>Espaço Porto Cruz</strong> o al <strong>Rooftop Flores</strong> — las vistas en la hora dorada son mágicas. <strong>Guindalense</strong> es el más auténtico y el menos turístico — los locales lo adoran. Todos los de Gaia son accesibles a pie cruzando el puente.</div>
-      </div>
-    </section>
+        <div class="sub-section">
+          <div class="sub-label">🍺 Cervecerías artesanas</div>
+          <div class="list-grid">
 
-    <div class="section-divider"></div>
+  <div class="list-card">
+    <img src="images/nortada.jpg" alt="Fábrica Nortada" class="list-card-img">
+    <div>
+      <div class="list-name">Fábrica Nortada</div>
+      <div class="list-sub">Cerveza artesana portuense</div>
+      <div class="list-badge">Favorita de Fer</div>
+    </div>
+  </div>
 
-    <!-- ══ 5 · MARCHA ══ -->
-    <section class="cat-section fade-in" id="marcha">
-      <div class="cat-header">
-        <div class="cat-header-icon">🎉</div>
-        <div class="cat-header-text">
-          
-          <div class="cat-header-title" style="color: var(--text-dark);">Ir de marcha · <em style="color: var(--light-blue);">la noche portuense</em></div>
-          <div class="cat-header-desc" style="color: var(--text-light);">Porto tiene una vida nocturna increíble concentrada en zonas muy caminables. Aquí el mapa de la noche que solo conocen los locales.</div>
-        </div>
-      </div>
+  <div class="list-card">
+    <img src="images/77.jpg" alt="Espaço 77" class="list-card-img">
+    <div>
+      <div class="list-name">Espaço 77</div>
+      <div class="list-sub">Porto centro</div>
+    </div>
+  </div>
 
-      <div class="zona-grid">
-        <div class="zona-card">
-          <div class="zona-num">Zona 1 · La más animada</div>
-          <div class="zona-title" style="color: var(--text-dark);">Galeria de Paris & alrededores</div>
-          <div class="zona-streets" style="color: var(--text-light);">
-            Rua Galeria de Paris<br>
-            Rua Cândido dos Reis<br>
-            Praça Carlos Alberto<br>
-            Rua das Oliveiras<br>
-            Travessa de Cedofeita
+  <div class="list-card">
+    <img src="images/armazem.jpg" alt="Armazém da Cerveja" class="list-card-img">
+    <div>
+      <div class="list-name">Armazém da Cerveja</div>
+      <div class="list-sub">Gran selección craft</div>
+    </div>
+  </div>
+
+  <div class="list-card">
+    <img src="images/taberna.jpg" alt="Taberna Aduela" class="list-card-img">
+    <div>
+      <div class="list-name">Taberna Aduela</div>
+      <div class="list-sub">Ambiente tradicional</div>
+    </div>
+  </div>
+
+  <div class="list-card">
+    <img src="images/beer.jpg" alt="Catraio Craft Beer Shop" class="list-card-img">
+    <div>
+      <div class="list-name">Catraio Craft Beer Shop</div>
+      <div class="list-sub">200+ referencias</div>
+      <div class="list-badge">Paraíso cervecero</div>
+    </div>
+  </div>
+
+  <div class="list-card">
+    <img src="images/maus.jpg" alt="Maus Hábitos" class="list-card-img">
+    <div>
+      <div class="list-name">Maus Hábitos</div>
+      <div class="list-sub">Bar cultural · 4º piso</div>
+    </div>
+  </div>
+
+</div>
+
+        <div class="sub-section">
+          <div class="sub-label">🍷 Bares de vino</div>
+          <div class="list-grid">
+            <div class="list-card">
+               <img src="images/wine.jpg" alt="The Wine Box" class="list-card-img">
+              <div class="list-name">The Wine Box</div>
+              <div class="list-sub">Viños portugueses</div>
+              <div class="list-badge">Top pick</div>
+            </div>
+            <div class="list-card">
+              <img src="images/capela.jpeg" alt="Capela Incomum" class="list-card-img">
+              <div class="list-name">Capela Incomum</div>
+              <div class="list-sub">Ambiente singular</div>
+
+            </div>
+            <div class="list-card">
+              <img src="images/pipa.jpg" alt="Pipa Velha" class="list-card-img">
+              <div class="list-name">Pipa Velha</div>
+              <div class="list-sub">Tasca de vinos</div>
+            </div>
           </div>
         </div>
-        <div class="zona-card">
-          <div class="zona-num">Zona 2 · Más tranquila</div>
-          <div class="zona-title" style="color: var(--text-dark);">Praça Filipa de Lencastre</div>
-          <div class="zona-streets" style="color: var(--text-light);">
-            Praça Filipa de Lencastre<br>
-            Rua da Picaria<br>
-            Rua do Almada<br>
-            Rua da Conceição<br>
-            Rua Dr. Ricardo Jorge
+
+        <div class="tip-box">
+          <div class="tip-icon">💡</div>
+          <div class="tip-text">
+            <strong>Tip de Fer:</strong> <strong>Fábrica Nortada</strong> tiene
+            jardín exterior enorme — perfecta para tardes de verano.
+            <strong>Maus Hábitos</strong> es punto de encuentro de la escena
+            cultural de Porto: conciertos, exposiciones y buena música.
+            <strong>Catraio</strong> te deja probar antes de comprar.
           </div>
         </div>
-        <div class="zona-card">
-          <div class="zona-num">Zona 3 · Alternativa & local</div>
-          <div class="zona-title" style="color: var(--text-dark);">Rua de Passos Manuel</div>
-          <div class="zona-streets" style="color: var(--text-light);">
-            Rua de Passos Manuel<br>
-            Praça dos Poveiros<br>
-            <span style="color:var(--gold-dim);font-size:11px;margin-top:6px;display:block">Zona más frecuentada por los portuenses — menos turistas, más ambiente local</span>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ══ 4 · ROOFTOPS ══ -->
+      <section class="cat-section fade-in" id="rooftops">
+        <div class="cat-header">
+          <div class="cat-header-icon">🌅</div>
+          <div class="cat-header-text">
+            <div class="cat-header-title" style="color: var(--text-dark)">
+              Rooftops
+              <em style="color: var(--light-blue)"
+                >&amp; terrazas con vistas</em
+              >
+            </div>
+            <div class="cat-header-desc" style="color: var(--text-light)">
+              Porto desde las alturas — los mejores sitios para ver el
+              atardecer, el Duero y el Centro Histórico con un cóctel en la
+              mano.
+            </div>
           </div>
+        </div>
+
+        <div class="roof-grid">
+          <div class="roof-card">
+
+            <div class="roof-header">
+              <div class="roof-emoji-wrap">🌇</div>
+              <div class="roof-name" style="color: var(--text-dark)">
+                Terrace Lounge 360° — Espaço Porto Cruz
+              </div>
+                          <div class="roof-img">
+    <img src="images/terrace4.jpg" alt="Terrace Lounge 360° Porto Cruz">
+  </div>
+              <div class="roof-tags">
+                <span class="roof-tag">Terraza exterior</span>
+                <span class="roof-tag">Vila Nova de Gaia</span>
+                <span class="roof-tag">Vistas 360°</span>
+              </div>
+            </div>
+            <div class="roof-desc" style="color: var(--text-light)">
+              Terraza panorámica con vistas a todo Porto desde Gaia. Una de las
+              mejores perspectivas del Puente Luiz I y la Ribeira. Cócteles y
+              Vinho do Porto.
+            </div>
+            <div class="roof-footer">
+              <div class="roof-address">
+                <span class="roof-address-icon">📍</span>Largo Miguel Bombarda
+                23, 4400-222 Vila Nova de Gaia
+              </div>
+              <div class="roof-phone">☎ 22 092 5401</div>
+            </div>
+          </div>
+
+          <div class="roof-card">
+            <div class="roof-header">
+              <div class="roof-emoji-wrap">⚽</div>
+              <div class="roof-name" style="color: var(--text-dark)">
+                Guindalense FC
+              </div>
+              <div class="roof-img">
+    <img src="images/guindalense.jpg" alt="Guindalense FC">
+  </div>
+              <div class="roof-tags">
+                <span class="roof-tag">Música en vivo</span>
+                <span class="roof-tag">Comida en el bar</span>
+                <span class="roof-tag">Local auténtico</span>
+              </div>
+            </div>
+            <div class="roof-desc" style="color: var(--text-light)">
+              El club de fútbol más pintoresco de Porto, colgado sobre los
+              Guindais con vistas directas al Duero. Conciertos en vivo y una de
+              las mejores vistas de la ciudad.
+            </div>
+            <div class="roof-footer">
+              <div class="roof-address">
+                <span class="roof-address-icon">📍</span>Escada dos Guindais 43,
+                4000-337 Porto
+              </div>
+              <div class="roof-phone">☎ 22 203 4246</div>
+            </div>
+          </div>
+
+          <div class="roof-card">
+            <div class="roof-header">
+              <div class="roof-emoji-wrap">🏛️</div>
+              <div class="roof-name" style="color: var(--text-dark)">
+                WOW — World of Wine
+              </div>
+                          <div class="roof-img">
+    <img src="images/wow.jpg" alt="WOW — World of Wine">
+  </div>
+              <div class="roof-tags">
+                <span class="roof-tag">Museos</span>
+                <span class="roof-tag">Restaurantes</span>
+                <span class="roof-tag">Bodegas</span>
+              </div>
+            </div>
+            <div class="roof-desc" style="color: var(--text-light)">
+              Complejo cultural en Gaia que narra la historia del vino
+              portugués. Museos, restaurantes, bares y bodegas en un espacio
+              espectacular con terrazas con vistas.
+            </div>
+            <div class="roof-footer">
+              <div class="roof-address">
+                <span class="roof-address-icon">📍</span>Rua do Choupelo 39,
+                4400-088 Vila Nova de Gaia
+              </div>
+              <div class="roof-phone">☎ 22 012 1200</div>
+            </div>
+          </div>
+
+          <div class="roof-card">
+            <div class="roof-header">
+              <div class="roof-emoji-wrap">🍸</div>
+              <div class="roof-name" style="color: var(--text-dark)">
+                Bite Rooftop Gaia
+              </div>
+                          <div class="roof-img">
+    <img src="images/bite-rooftop.jpg" alt="Bite Rooftop Gaia">
+  </div>
+              <div class="roof-tags">
+                <span class="roof-tag">Terraza exterior</span>
+                <span class="roof-tag">Bar & comida</span>
+                <span class="roof-tag">Moderno</span>
+              </div>
+            </div>
+            <div class="roof-desc" style="color: var(--text-light)">
+              Rooftop contemporáneo en Gaia con barra de cocktails y tapas.
+              Vistas al skyline de Porto y ambiente desenfadado. Perfecto para
+              el after-work.
+            </div>
+            <div class="roof-footer">
+              <div class="roof-address">
+                <span class="roof-address-icon">📍</span>R. de Cabo Simão 10,
+                4430-033 Vila Nova de Gaia
+              </div>
+              <div class="roof-phone">☎ 938 973 770</div>
+            </div>
+          </div>
+
+          <div class="roof-card">
+            <div class="roof-header">
+              <div class="roof-emoji-wrap">🌹</div>
+              <div class="roof-name" style="color: var(--text-dark)">
+                Rooftop Flores
+              </div>
+                          <div class="roof-img">
+    <img src="images/flores.webp" alt="Rooftop Flores">
+  </div>
+              <div class="roof-tags">
+                <span class="roof-tag">Música en vivo · Vi–Sá</span>
+                <span class="roof-tag">Vistas Catedral</span>
+                <span class="roof-tag">Tapas & cócteles</span>
+              </div>
+            </div>
+            <div class="roof-desc" style="color: var(--text-light)">
+              De las mejores vistas hacia el Centro Histórico y la Sé Catedral
+              de Porto. Tapas y cócteles de autor. Los viernes y sábados con
+              música en vivo.
+            </div>
+            <div class="roof-footer">
+              <div class="roof-address">
+                <span class="roof-address-icon">📍</span>Rua da Vitória 177,
+                Porto
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tip-box">
+          <div class="tip-icon">💡</div>
+          <div class="tip-text">
+            <strong>Tip de Fer:</strong> Para el atardecer, ve al
+            <strong>Espaço Porto Cruz</strong> o al
+            <strong>Rooftop Flores</strong> — las vistas en la hora dorada son
+            mágicas. <strong>Guindalense</strong> es el más auténtico y el menos
+            turístico — los locales lo adoran. Todos los de Gaia son accesibles
+            a pie cruzando el puente.
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- ══ 5 · MARCHA ══ -->
+      <section class="cat-section fade-in" id="marcha">
+        <div class="cat-header">
+          <div class="cat-header-icon">🎉</div>
+          <div class="cat-header-text">
+            <div class="cat-header-title" style="color: var(--text-dark)">
+              Ir de marcha ·
+              <em style="color: var(--light-blue)">la noche portuense</em>
+            </div>
+            <div class="cat-header-desc" style="color: var(--text-light)">
+              Porto tiene una vida nocturna increíble concentrada en zonas muy
+              caminables. Aquí el mapa de la noche que solo conocen los locales.
+            </div>
+          </div>
+        </div>
+
+        <div class="zona-grid">
+          <div class="zona-card">
+            <div class="zona-num">La más animada</div>
+            <div class="zona-title" style="color: var(--text-dark)">
+              Galeria de Paris & alrededores
+            </div>
+            <div class="roof-img">
+    <img src="images/paris.jpg" alt="Galeria de Paris">
+  </div>
+            <div class="zona-streets" style="color: var(--text-light)">
+              Rua Galeria de Paris<br />
+              Rua Cândido dos Reis<br />
+              Praça Carlos Alberto<br />
+              Rua das Oliveiras<br />
+              Travessa de Cedofeita
+            </div>
+          </div>
+          <div class="zona-card">
+            <div class="zona-num">Más tranquila</div>
+            <div class="zona-title" style="color: var(--text-dark)">
+              Praça Filipa de Lencastre
+            </div>
+            <div class="zona-streets" style="color: var(--text-light)">
+              Praça Filipa de Lencastre<br />
+              Rua da Picaria<br />
+              Rua do Almada<br />
+              Rua da Conceição<br />
+              Rua Dr. Ricardo Jorge
+            </div>
+          </div>
+          <div class="zona-card">
+            <div class="zona-num">Alternativa & local</div>
+            <div class="zona-title" style="color: var(--text-dark)">
+              Rua de Passos Manuel
+            </div>
+            <div class="zona-streets" style="color: var(--text-light)">
+              Rua de Passos Manuel<br />
+              Praça dos Poveiros<br />
+              <span
+                style="
+                  color: var(--gold-dim);
+                  font-size: 11px;
+                  margin-top: 6px;
+                  display: block;
+                "
+                >Zona más frecuentada por los portuenses — menos turistas, más
+                ambiente local</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-icon">💡</div>
+          <div class="tip-text">
+            <strong>Tip de Fer:</strong> La noche en Porto empieza tarde — los
+            bares se animan a partir de las 23h y los clubs desde la 1h.
+            <strong>Galeria de Paris</strong> es la calle más icónica: bares en
+            fila, música en la calle, gente de todo el mundo. Para algo más
+            local ve a <strong>Passos Manuel</strong> — es donde van los
+            estudiantes de la universidad.
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BOTTOM -->
+      <div class="cta-bottom fade-in">
+        <div class="cta-bottom-title" style="color: var(--text-dark)">
+          ¿Quieres vivirlo <em style="color: var(--light-blue)">en persona?</em>
+        </div>
+        <p class="cta-bottom-text" style="color: var(--text-medium)">
+          Organizo rutas nocturnas personalizadas, reservo el Fado con descuento
+          y te acompaño a las bodegas. Escríbeme y lo preparamos todo.
+        </p>
+        <div class="cta-row">
+          <a
+            href="https://wa.me/351910210968"
+            target="_blank"
+            class="btn-primary"
+            >Hablar con Fer en WhatsApp ›</a
+          >
+          <a
+            href="porturisteando.html#tours"
+            class="btn-outline"
+            style="color: var(--text-medium); border-color: var(--blue-border)"
+            >Ver todos los tours</a
+          >
         </div>
       </div>
 
-      <div class="tip-box">
-        <div class="tip-icon">💡</div>
-        <div class="tip-text"><strong>Tip de Fer:</strong> La noche en Porto empieza tarde — los bares se animan a partir de las 23h y los clubs desde la 1h. <strong>Galeria de Paris</strong> es la calle más icónica: bares en fila, música en la calle, gente de todo el mundo. Para algo más local ve a <strong>Passos Manuel</strong> — es donde van los estudiantes de la universidad.</div>
-      </div>
-    </section>
-
-    <!-- CTA BOTTOM -->
-    <div class="cta-bottom fade-in">
-      <div class="cta-bottom-title" style="color: var(--text-dark);">¿Quieres vivirlo <em style="color: var(--light-blue);">en persona?</em></div>
-      <p class="cta-bottom-text" style="color: var(--text-medium);">Organizo rutas nocturnas personalizadas, reservo el Fado con descuento y te acompaño a las bodegas. Escríbeme y lo preparamos todo.</p>
-      <div class="cta-row">
-        <a href="https://wa.me/351910210968" target="_blank" class="btn-primary">Hablar con Fer en WhatsApp ›</a>
-        <a href="porturisteando.html#tours" class="btn-outline" style="color: var(--text-medium); border-color: var(--blue-border);">Ver todos los tours</a>
+      <!-- OTHER PAGES -->
+      <div class="other-cats fade-in">
+        <div class="other-label">Más recomendaciones</div>
+        <div class="other-grid">
+          <a href="gastronomia.html" class="other-card"
+            ><span class="other-emoji">🍽️</span
+            ><span class="other-name">Gastronomía</span></a
+          >
+          <a href="porturisteando.html#recomendaciones" class="other-card"
+            ><span class="other-emoji">🛍️</span
+            ><span class="other-name" style="color: var(--text-medium)"
+              >Compras & Souvenirs</span
+            ></a
+          >
+          <a href="porturisteando.html#recomendaciones" class="other-card"
+            ><span class="other-emoji">🆓</span
+            ><span class="other-name" style="color: var(--text-medium)"
+              >Top 10 Gratis</span
+            ></a
+          >
+          <a href="porturisteando.html#servicios" class="other-card"
+            ><span class="other-emoji">✈️</span
+            ><span class="other-name" style="color: var(--text-medium)"
+              >Consultoría de Viajes</span
+            ></a
+          >
+          <a href="porturisteando.html#masira" class="other-card"
+            ><span class="other-emoji">🏕️</span
+            ><span class="other-name" style="color: var(--text-medium)"
+              >Masira Travel</span
+            ></a
+          >
+          <a href="porturisteando.html#tours" class="other-card"
+            ><span class="other-emoji">🗺️</span
+            ><span class="other-name" style="color: var(--text-medium)"
+              >Todos los tours</span
+            ></a
+          >
+        </div>
       </div>
     </div>
+    <!-- /main -->
 
-    <!-- OTHER PAGES -->
-    <div class="other-cats fade-in">
-      <div class="other-label">Más recomendaciones</div>
-      <div class="other-grid">
-        <a href="gastronomia.html" class="other-card"><span class="other-emoji">🍽️</span><span class="other-name">Gastronomía</span></a>
-        <a href="porturisteando.html#recomendaciones" class="other-card"><span class="other-emoji">🛍️</span><span class="other-name" style="color: var(--text-medium);">Compras & Souvenirs</span></a>
-        <a href="porturisteando.html#recomendaciones" class="other-card"><span class="other-emoji">🆓</span><span class="other-name" style="color: var(--text-medium);">Top 10 Gratis</span></a>
-        <a href="porturisteando.html#servicios" class="other-card"><span class="other-emoji">✈️</span><span class="other-name" style="color: var(--text-medium);">Consultoría de Viajes</span></a>
-        <a href="porturisteando.html#masira" class="other-card"><span class="other-emoji">🏕️</span><span class="other-name" style="color: var(--text-medium);">Masira Travel</span></a>
-        <a href="porturisteando.html#tours" class="other-card"><span class="other-emoji">🗺️</span><span class="other-name" style="color: var(--text-medium);">Todos los tours</span></a>
+    <!-- FOOTER -->
+    <footer style="background: var(--bg-lighter)">
+      <div class="footer-inner">
+        <div class="footer-logo">Porturisteando con Fer · Oporto</div>
+        <div class="footer-links">
+          <a href="mailto:fernanda.blondel@gmail.com"
+            >fernanda.blondel@gmail.com</a
+          >
+          <a href="https://wa.me/351910210968" target="_blank"
+            >+351 910 210 968</a
+          >
+          <a
+            href="https://www.instagram.com/porturisteando.con.fer/"
+            target="_blank"
+            >@porturisteando.con.fer</a
+          >
+        </div>
+        <div class="footer-copy">Porto · Portugal · ♥</div>
       </div>
-    </div>
+    </footer>
 
-  </div><!-- /main -->
+    <!-- WA FLOAT -->
+    <a
+      href="https://wa.me/351910210968"
+      target="_blank"
+      class="wa-float"
+      aria-label="WhatsApp"
+    >
+      <div class="wa-pulse"></div>
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
 
-  <!-- FOOTER -->
-  <footer style="background: var(--bg-lighter);">
-    <div class="footer-inner">
-      <div class="footer-logo">Porturisteando con Fer · Oporto</div>
-      <div class="footer-links">
-        <a href="mailto:fernanda.blondel@gmail.com">fernanda.blondel@gmail.com</a>
-        <a href="https://wa.me/351910210968" target="_blank">+351 910 210 968</a>
-        <a href="https://www.instagram.com/porturisteando.con.fer/" target="_blank">@porturisteando.con.fer</a>
-      </div>
-      <div class="footer-copy">Porto · Portugal · ♥</div>
-    </div>
-  </footer>
+    <script src="main.js" defer></script>
+    <script>
+      const sections = [
+        "planazos",
+        "bodegas",
+        "cervezas",
+        "rooftops",
+        "marcha",
+      ];
+      const navBtns = document.querySelectorAll(".cat-nav-btn");
 
-  <!-- WA FLOAT -->
-  <a href="https://wa.me/351910210968" target="_blank" class="wa-float" aria-label="WhatsApp">
-    <div class="wa-pulse"></div>
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
-
-  <script src="main.js" defer></script>
-  <script>
-    const sections = ['planazos', 'bodegas', 'cervezas', 'rooftops', 'marcha'];
-    const navBtns = document.querySelectorAll('.cat-nav-btn');
-
-    window.addEventListener('load', () => {
-      initCategoryNav(sections, navBtns);
-    });
-  </script>
-</body>
+      window.addEventListener("load", () => {
+        initCategoryNav(sections, navBtns);
+      });
+    </script>
+  </body>
 </html>
