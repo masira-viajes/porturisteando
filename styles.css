@@ -384,7 +384,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--gold);
+  background: #00aa6c;        /* verde oficial do Tripadvisor */
   color: #fff;
   font-size: 13px;
   font-weight: 500;
@@ -394,7 +394,7 @@ footer {
   text-decoration: none;
 }
 .review-cta:hover {
-  background: var(--gold-light);
+  background: #008f5b;
   transform: translateY(-1px);
 }
 
