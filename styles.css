@@ -511,3 +511,87 @@ footer {
 .lightbox-close:hover {
   opacity: 1;
 }
+
+/* ── FOOTER DARK ── */
+.footer-dark {
+  background: #0c1020;
+  padding: 48px 20px 32px;
+  text-align: center;
+  border-top: 0.5px solid rgba(200,144,42,0.15);
+}
+
+.footer-dark-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-dark-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.3px;
+}
+
+.footer-dark-logo span {
+  color: var(--gold);
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 0.5px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.footer-social-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-dark-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: center;
+}
+
+.footer-dark-nav a {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.footer-dark-nav a:hover {
+  color: var(--gold-light);
+}
+
+.footer-dark-copy {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-top: 16px;
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+  width: 100%;
+}
+
