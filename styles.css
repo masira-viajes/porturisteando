@@ -76,6 +76,61 @@ img { display: block; max-width: 100%; }
   max-width: 520px; line-height: 1.7;
 }
 
+.subhero-with-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+/* a foto */
+.subhero-with-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('images/experiencias.jpg');
+  background-size: cover;
+  background-position: center center;
+  image-rendering: -webkit-optimize-contrast;  /* melhora nitidez em alguns browsers */
+  opacity: 1;
+  z-index: 0;
+}
+
+/* overlay escuro por cima da foto */
+.subhero-with-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 20, 40, 0.75) 0%,
+    rgba(10, 20, 40, 0.45) 60%,
+    rgba(10, 20, 40, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+/* garante que o conteúdo fica por cima de tudo */
+.subhero-with-photo > * {
+  position: relative;
+  z-index: 2;
+}
+
+.subhero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* texto a branco para contrastar com a foto */
+.subhero-with-photo .breadcrumb a,
+.subhero-with-photo .breadcrumb span { color: rgba(255,255,255,0.6); }
+.subhero-with-photo .subhero-label { color: rgba(200,144,42,0.9); }
+.subhero-with-photo .subhero-title { color: #ffffff; }
+.subhero-with-photo .subhero-desc { color: rgba(255,255,255,0.8); }
+
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
