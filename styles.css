@@ -124,12 +124,6 @@ img { display: block; max-width: 100%; }
   z-index: 0;
 }
 
-/* texto a branco para contrastar com a foto */
-.subhero-with-photo .breadcrumb a,
-.subhero-with-photo .breadcrumb span { color: rgba(255,255,255,0.6); }
-.subhero-with-photo .subhero-label { color: rgba(200,144,42,0.9); }
-.subhero-with-photo .subhero-title { color: #ffffff; }
-.subhero-with-photo .subhero-desc { color: rgba(255,255,255,0.8); }
 
 /* ── NAV ── */
 nav {
