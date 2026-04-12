@@ -1,16 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ── Mobile Menu Toggle ──
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-    document.querySelectorAll('.menu-link').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    });
-  document.addEventListener('DOMContentLoaded', () => {
   // ── Mobile Menu Toggle ──
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -24,36 +13,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Intersection Observer for Fade-in ──
+  // ── Fade-in Observer ──
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-  // ── Trigger hero fade-ins immediately ──
   setTimeout(() => {
     document.querySelectorAll('.hero .fade-in, .subhero .fade-in').forEach(el => el.classList.add('visible'));
   }, 100);
 
   // ── Category Nav — Gastronomia ──
-  const gastroSections = ['tradicional','bacalao','francesinha','mariscos','sardinas','sandwiches','vegetarianos','nata','glutenfree'];
-  const gastroBtns = document.querySelectorAll('.cat-nav-btn');
   if (document.getElementById('tradicional')) {
-    initCategoryNav(gastroSections, gastroBtns);
+    const gastroSections = ['tradicional','bacalao','francesinha','mariscos','sardinas','sandwiches','vegetarianos','nata','glutenfree'];
+    const gastroBtns = document.querySelectorAll('.cat-nav-btn');
     wireCategoryBtns(gastroSections, gastroBtns);
+    initCategoryNav(gastroSections, gastroBtns);
   }
 
   // ── Category Nav — Experiencias ──
-  const expSections = ['planazos','bodegas','cervezas','rooftops','marcha','gratis','compras'];
-  const expBtns = document.querySelectorAll('.cat-nav-btn');
   if (document.getElementById('planazos')) {
-    initCategoryNav(expSections, expBtns);
+    const expSections = ['planazos','bodegas','cervezas','rooftops','marcha','top10','compras'];
+    const expBtns = document.querySelectorAll('.cat-nav-btn');
     wireCategoryBtns(expSections, expBtns);
+    initCategoryNav(expSections, expBtns);
   }
 
   // ── Lightbox ──
@@ -71,8 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
 
     function closeLightbox() {
       lightbox.classList.remove('open');
@@ -98,79 +88,25 @@ function wireCategoryBtns(sections, navBtns) {
   });
 }
 
+// ── Active tab on scroll ──
 function initCategoryNav(sections, navBtns) {
   const catNav = document.getElementById('catNav');
   if (!catNav) return;
 
   function updateActiveTab() {
-    const navHeight = document.querySelector('nav').offsetHeight;
-    const catNavHeight = catNav.offsetHeight;
-    const offset = navHeight + catNavHeight + 20;
-    const scrollY = window.pageYOffset + offset;
-
+    const navH = document.querySelector('nav').offsetHeight;
+    const catH = catNav.offsetHeight;
+    const scrollY = window.pageYOffset + navH + catH + 20;
     let activeIdx = 0;
     sections.forEach((id, i) => {
       const el = document.getElementById(id);
       if (el && el.offsetTop <= scrollY) activeIdx = i;
     });
-
     navBtns.forEach((btn, i) => btn.classList.toggle('active', i === activeIdx));
-
     const activeBtn = navBtns[activeIdx];
     if (activeBtn) {
-      const scrollLeft = activeBtn.offsetLeft - catNav.offsetWidth / 2 + activeBtn.offsetWidth / 2;
-      catNav.scrollTo({ left: scrollLeft, behavior: 'smooth' });
-    }
-  }
-
-  window.addEventListener('scroll', updateActiveTab, { passive: true });
-  updateActiveTab();
-}
-
-  }
-
-  // ── Intersection Observer for Fade-in ──
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
-
-  // ── Trigger hero fade-ins immediately ──
-  setTimeout(() => {
-    document.querySelectorAll('.hero .fade-in, .subhero .fade-in').forEach(el => el.classList.add('visible'));
-  }, 100);
-});
-
-/**
- * Shared logic for sticky category navigation (Gastronomía & Experiencias)
- */
-function initCategoryNav(sections, navBtns) {
-  const catNav = document.getElementById('catNav');
-  if (!catNav) return;
-
-  function updateActiveTab() {
-    const navHeight = document.querySelector('nav').offsetHeight;
-    const catNavHeight = catNav.offsetHeight;
-    const offset = navHeight + catNavHeight + 20;
-    const scrollY = window.pageYOffset + offset;
-
-    let activeIdx = 0;
-    sections.forEach((id, i) => {
-      const el = document.getElementById(id);
-      if (el && el.offsetTop <= scrollY) activeIdx = i;
-    });
-
-    navBtns.forEach((btn, i) => btn.classList.toggle('active', i === activeIdx));
-
-    const activeBtn = navBtns[activeIdx];
-    if (activeBtn) {
-      const scrollLeft = activeBtn.offsetLeft - catNav.offsetWidth / 2 + activeBtn.offsetWidth / 2;
-      catNav.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      const left = activeBtn.offsetLeft - catNav.offsetWidth / 2 + activeBtn.offsetWidth / 2;
+      catNav.scrollTo({ left, behavior: 'smooth' });
     }
   }
 
