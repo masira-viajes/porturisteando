@@ -17,6 +17,11 @@
   --primary-blue:#0077cc;
   --gold:        #c8902a;
   --gold-light:  #e0a53d;
+  --gold-dim:    #a0550f;
+  --gold-pale:   rgba(200,144,42,0.1);
+  --dim-blue:    #0047ab;
+  --light-blue:  #3399dd;
+  --pale-blue:   #e8f4fd;
   --gold-border: rgba(200,144,42,0.2);
   --text-mid:    #555566;
   --text-light:  #888899;
