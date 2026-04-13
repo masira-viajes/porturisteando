@@ -12,6 +12,12 @@
   --bg-section:  #f0f5fb;
   --border:      #e0eaf5;
   --text:        #1a1a2e;
+  --text-dark:   #1a1a2e;
+  --text-medium: #555566;
+  --primary-blue:#0077cc;
+  --gold:        #c8902a;
+  --gold-light:  #e0a53d;
+  --gold-border: rgba(200,144,42,0.2);
   --text-mid:    #555566;
   --text-light:  #888899;
   --radius:      14px;
@@ -83,6 +89,8 @@ nav {
   left: 0;
   right: 0;  /* ← tem de ter right: 0 */
   z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-links a {
@@ -143,8 +151,11 @@ nav {
   display: none;
   background: none;
   border: none;
-  font-size: 28px;
   cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  z-index: 101;
 }
 
 .nav-menu-btn span {
@@ -292,7 +303,7 @@ footer {
   }
 
   .mobile-menu {
-    position: absolute;
+    position: fixed;
     top: 80px;
     right: 20px;
     background: white;
@@ -391,7 +402,7 @@ footer {
 .stats-bar-inner .hero-stat {
   flex: 1;
   min-width: 140px;
-  padding: q  4px 32px;
+  padding: 24px 32px;
   border-right: 1px solid #eee;
 }
 .stats-bar-inner .hero-stat:last-child {
