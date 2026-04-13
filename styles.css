@@ -191,14 +191,25 @@ nav {
   transform: translateY(-1px);
 }
 
+.nav-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
 .nav-menu-btn span {
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--text-dark);  /* linha escura visível no nav branco */
+  background: var(--text-dark);
   border-radius: 2px;
   transition: all 0.3s;
 }
+
 .mobile-menu {
   display: none;
   position: fixed;
