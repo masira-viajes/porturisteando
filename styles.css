@@ -76,67 +76,13 @@ img { display: block; max-width: 100%; }
   max-width: 520px; line-height: 1.7;
 }
 
-.subhero-with-photo {
-  position: relative;
-  overflow: hidden;
-}
-
-/* a foto */
-.subhero-with-photo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('images/experiencias.jpg');
-  background-size: cover;
-  background-position: center center;
-  image-rendering: -webkit-optimize-contrast;  /* melhora nitidez em alguns browsers */
-  opacity: 1;
-  z-index: 0;
-}
-
-/* overlay escuro por cima da foto */
-.subhero-with-photo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 20, 40, 0.75) 0%,
-    rgba(10, 20, 40, 0.45) 60%,
-    rgba(10, 20, 40, 0.2) 100%
-  );
-  z-index: 1;
-}
-
-/* garante que o conteúdo fica por cima de tudo */
-.subhero-with-photo > * {
-  position: relative;
-  z-index: 2;
-}
-
-.subhero-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
-}
-
-
 /* ── NAV ── */
 nav {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: 0;  /* ← tem de ter right: 0 */
   z-index: 100;
-  padding: 0 20px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(0, 71, 171, 0.08);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
 
 .nav-links a {
@@ -191,14 +137,14 @@ nav {
   transform: translateY(-1px);
 }
 
+
+
 .nav-menu-btn {
   display: none;
   background: none;
   border: none;
+  font-size: 28px;
   cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-  padding: 4px;
 }
 
 .nav-menu-btn span {
@@ -212,19 +158,11 @@ nav {
 
 .mobile-menu {
   display: none;
-  position: fixed;
-  inset: 60px 0 0 0;
-  z-index: 99;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
 }
 
 .mobile-menu.open {
   display: flex;
+  flex-direction: column;
 }
 
 .mobile-menu a {
@@ -340,14 +278,35 @@ footer {
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* ── RESPONSIVE NAV ── */
-@media (max-width: 700px) {
-  .nav-links, .nav-cta { display: none; }
-  .nav-menu-btn { display: flex; }
+@media (max-width:700px) {
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-menu-btn {
+    display: flex;
+  }
+  .subhero {
+    padding: 72px 20px 40px;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    gap: 14px;
+    z-index: 999;
+  }
 }
 
 /* ── SUBHERO (Used in Gastronomía and Experiencias) ── */
 .subhero {
-  padding: 110px 20px 56px;
+  padding: 80px 20px 56px;
   position: relative; overflow: hidden;
 }
 .subhero-glow {
@@ -404,6 +363,7 @@ footer {
   justify-content: space-between;
   height: 60px;
   gap: 16px;
+  width: 100%;  /* ← adiciona isto */
 }
 .cat-nav-btn {
   display: inline-flex; align-items: center; gap: 7px;
@@ -431,7 +391,7 @@ footer {
 .stats-bar-inner .hero-stat {
   flex: 1;
   min-width: 140px;
-  padding: 24px 32px;
+  padding: q  4px 32px;
   border-right: 1px solid #eee;
 }
 .stats-bar-inner .hero-stat:last-child {
