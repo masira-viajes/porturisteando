@@ -142,18 +142,21 @@ n    };
       }
     }
 
-    // always open on every page (no session persistence)
-    setTimeout(() => {
-      openPopup();
-      document.addEventListener('keydown', onKeyDown);
-    }, 1000);
+  
+    let seen = false;
+    try { seen = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
 
-    if (igClose) igClose.addEventListener('click', closePopup);
-    igPopup.addEventListener('click', (e) => { if (e.target === igPopup) closePopup(); });
-    if (igCta) igCta.addEventListener('click', closePopup);
+    if (!seen) {
+      setTimeout(() => {
+        openPopup();
+        document.addEventListener('keydown', onKeyDown);
+      }, 1000);
+
+      if (igClose) igClose.addEventListener('click', closePopup);
+      igPopup.addEventListener('click', (e) => { if (e.target === igPopup) closePopup(); });
+      if (igCta) igCta.addEventListener('click', closePopup); // mark as seen when converting
     }
   }
-
 });
 
 // ── Wire tab clicks ──
