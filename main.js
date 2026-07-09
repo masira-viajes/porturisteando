@@ -70,6 +70,92 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ── Masira Instagram Popup (accessibility improvements) ──
+  const igPopup = document.getElementById('masiraPopup');
+  if (igPopup) {
+    const igClose = document.getElementById('igPopupClose');
+    const igCta = document.getElementById('igPopupCta');
+    const igCard = igPopup.querySelector('.ig-popup-card');
+    const igText = igPopup.querySelector('.ig-popup-text');
+    const STORAGE_KEY = 'masiraPopupSeen';
+
+    // ensure popup/card focusable and described
+    if (igCard && !igCard.hasAttribute('tabindex')) igCard.setAttribute('tabindex', '-1');
+    if (igText && !igText.id) igText.id = 'igPopupDesc';
+    if (igText) igPopup.setAttribute('aria-describedby', igText.id);
+
+    // ensure external link rel is safe
+    if (igCta && igCta.target === '_blank') {
+      const rel = new Set((igCta.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
+      rel.add('noopener'); rel.add('noreferrer');
+      igCta.setAttribute('rel', Array.from(rel).join(' '));
+    }
+
+    let lastFocused = null;
+
+    function setBackgroundInert(inert) {
+      document.querySelectorAll('body > *').forEach(el => {
+        if (!el.contains(igPopup)) {
+          try { el.inert = inert; } catch(e) {}
+          el.setAttribute('aria-hidden', inert ? 'true' : 'false');
+        }
+      });
+    }
+
+    function getFocusable(container) {
+      return Array.from(container.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])'))
+        .filter(el => el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+    }
+
+    const openPopup = () => {
+      lastFocused = document.activeElement;
+      igPopup.classList.add('open');
+      igPopup.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setBackgroundInert(true);
+      // move focus into the dialog (prefer close button)
+      const first = (igClose && !igClose.disabled) ? igClose : igCard;
+      (first || igCard).focus();
+n    };
+
+    const closePopup = () => {
+      igPopup.classList.remove('open');
+      igPopup.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      setBackgroundInert(false);
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    };
+
+    // Focus trap: handle Tab navigation inside popup
+    function onKeyDown(e) {
+      if (!igPopup.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closePopup(); return; }
+      if (e.key === 'Tab') {
+        const focusable = getFocusable(igPopup);
+        if (focusable.length === 0) { e.preventDefault(); return; }
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+
+    let seen = false;
+    try { seen = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+
+    if (!seen) {
+      setTimeout(() => {
+        openPopup();
+        document.addEventListener('keydown', onKeyDown);
+      }, 7000);
+
+      if (igClose) igClose.addEventListener('click', closePopup);
+      igPopup.addEventListener('click', (e) => { if (e.target === igPopup) closePopup(); });
+      if (igCta) igCta.addEventListener('click', closePopup); // mark as seen when converting
+    }
+  }
+
 });
 
 // ── Wire tab clicks ──
