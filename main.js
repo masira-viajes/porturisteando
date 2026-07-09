@@ -116,7 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // move focus into the dialog (prefer close button)
       const first = (igClose && !igClose.disabled) ? igClose : igCard;
       (first || igCard).focus();
-n    };
+
+n    };
 
     const closePopup = () => {
       igPopup.classList.remove('open');
@@ -141,18 +142,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    let seen = false;
-    try { seen = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+    // always open on every page (no session persistence)
+    setTimeout(() => {
+      openPopup();
+      document.addEventListener('keydown', onKeyDown);
+    }, 1000);
 
-    if (!seen) {
-      setTimeout(() => {
-        openPopup();
-        document.addEventListener('keydown', onKeyDown);
-      }, 7000);
-
-      if (igClose) igClose.addEventListener('click', closePopup);
-      igPopup.addEventListener('click', (e) => { if (e.target === igPopup) closePopup(); });
-      if (igCta) igCta.addEventListener('click', closePopup); // mark as seen when converting
+    if (igClose) igClose.addEventListener('click', closePopup);
+    igPopup.addEventListener('click', (e) => { if (e.target === igPopup) closePopup(); });
+    if (igCta) igCta.addEventListener('click', closePopup);
     }
   }
 
